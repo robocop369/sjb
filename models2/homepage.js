@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const bookSchema = new Schema({
-  title: { type: String, required: true },
-  author: { type: String, required: true },
-  synopsis: String,
-  date: { type: Date, default: Date.now }
+const homepageSchema = new Schema({
+  neighborhoodstats: [{stat: Schema.Types.ObjectId, img: String, get: v => `${root}${v}`}],
+  orgsinfo:[{ orgpostID: Schema.Types.ObjectId, title: String, blurb: String, img: String, get: v => `${root}${v}`, link: String}],
+  housinginfo:[{ houspostID: Schema.Types.ObjectId, title: String, blurb: String, img: String, get: v => `${root}${v}`, link: String}],
+  developmnentinfo:[{ devpostID: Schema.Types.ObjectId, title: String, blurb: String, img: String, get: v => `${root}${v}`, link: String}]
 });
 
-const Book = mongoose.model("Book", bookSchema);
+const Homepage = mongoose.model("Homepage", homepageSchema);
 
-module.exports = Book;
+module.exports = Homepage;
