@@ -11,10 +11,30 @@ https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-proje
 ​
 * Choose a self-explaining name for your project.
 ## Description
-* Let people know what your project can do specifically. Provide context and add a link to any reference visitors  might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are  alternatives to your project, this is a good place to list differentiating factors.
+* 
 ​
 # Badges
 On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+
+# Quick Start
+
+# Install dependencies for server
+npm install
+
+# Install dependencies for client
+npm run client-install
+
+# Run the client & server with concurrently
+npm run dev
+
+# Run the Express server only
+npm run server
+
+# Run the React client only
+npm run client
+
+# Server runs on http://localhost:5000 and client on http://localhost:3000
+
 ​
 https://github.com/badges/shields
 ​
