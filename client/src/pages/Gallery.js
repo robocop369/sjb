@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import CardContainer from "../components/CardContainer";
-import Row from "../components/Row";
+import CardContainer from "../components/LatestDev/CardContainer";
+import Row from "../components/LatestDev/Row";
 import APILatestdev from "../utils/APILatestdev";
 
 function Gallery() {
