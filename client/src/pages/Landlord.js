@@ -65,7 +65,7 @@ function Landlords() {
         <Gallery/>
         </Row>
         <Row>
-          <Col size="md-12" >
+          <Col size="md-6" >
             <Jumbotron>
               <h1>Do you have a complaint about a landlord?</h1>
             </Jumbotron>
@@ -94,7 +94,7 @@ function Landlords() {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-12 sm-12">
+          <Col size="md-6 sm-6">
             <Jumbotron>
               <h1>Landlord Complaint List</h1>
             </Jumbotron>
