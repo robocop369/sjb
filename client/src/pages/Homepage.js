@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
+import DeleteBtn from "../components/LandlordComplaint/DeleteBtn";
+import Jumbotron from "../components/LandlordComplaint/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Col, Row, Container } from "../components/LandlordComplaint/Grid";
+import { List, ListItem } from "../components/LandlordComplaint/List";
+import { Input, TextArea, FormBtn } from "../components/LandlordComplaint/Form";
 
 function Books() {
   // Setting our component's initial state

@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const bookRoutes = require("./books");
+const landlordRoutes = require("./landlords");
 const productRoutes = require("./products");
 const userRoutes = require("./users");
 
-// Book routes
-router.use("/books", bookRoutes);
+// Landlord routes
+router.use("/landlords", landlordRoutes);
 
 // Post routes
 router.use("/products", productRoutes);
