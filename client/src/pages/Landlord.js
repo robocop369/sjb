@@ -3,10 +3,9 @@ import DeleteBtn from "../components/LandlordComplaint/DeleteBtn";
 import Jumbotron from "../components/LandlordComplaint/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/LandlordComplaint/Grid";
+import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/LandlordComplaint/List";
 import { Input, TextArea, FormBtn } from "../components/LandlordComplaint/Form";
-import Gallery from "./Gallery"
 
 function Landlords() {
   // Setting our component's initial state
@@ -61,9 +60,6 @@ function Landlords() {
     return (
            
       <Container fluid>
-        <Row>
-        <Gallery/>
-        </Row>
         <Row>
           <Col size="md-6" >
             <Jumbotron>
