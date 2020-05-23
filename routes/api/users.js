@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const isAuthenticated = require("../../config/isAuthenticated");
+// const isAuthenticated = require("../../config/isAuthenticated");
 const auth = require("../../config/auth");
 const usersController = require("../../controllers/usersController");
 
@@ -18,7 +18,7 @@ router.route("/signup").post((req, res) => {
 
 // Any route with isAuthenticated is protected and you need a valid token
 // to access
-router.route("/:id").get(isAuthenticated, (req, res) => {
+router.route("/:id").get((req, res) => {
   db.User.findById(req.params.id)
     .then(data => {
       if (data) {
