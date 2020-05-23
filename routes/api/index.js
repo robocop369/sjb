@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const landlordRoutes = require("./landlords");
 const productRoutes = require("./products");
-const chicagoDataRoutes = require("./ChicagoData");
+const chicagoDataRoutes = require("./chicagoData");
 const userRoutes = require("./users");
 
 // Landlord routes
