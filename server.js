@@ -38,6 +38,13 @@ app.use(function(err, req, res, next) {
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds047020.mlab.com:47020/heroku_vkr6hkc6");
 
+// NEW Mongo DB
+// mongoose
+//   .connect(process.env.MONGODB_URI || "mongodb+srv://dbUser:dbUser@clustersjb-armq0.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, 
+//   useUnifiedTopology: true})
+//   .then(() => console.log('MongoDB connected'))
+//   .catch(err => console.log(err));
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
