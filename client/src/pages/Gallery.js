@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CardContainer from "../components/LatestDev/CardContainer";
 import Row from "../components/LatestDev/Row";
 import APILatestdev from "../utils/APILatestdev";
+// import ToggleButtonGroup from "../components/Bootstrap/ToggleButtonGroup";
 
 function Gallery() {
   const [user, setUser] = useState({});
@@ -54,8 +55,9 @@ function Gallery() {
 
   return (
     <div>
-      <h1 className="text-center">Welcome to LinkedUp</h1>
-      <p className="text-center h3">Click on the arrows to browse users</p>
+      <h1 className="text-center">Checkout the latest activity here</h1>
+      {/* <ToggleButtonGroup/> */}
+      <p className="text-center h3">Click on the arrows to browse through each category</p>
       <Row>
         <CardContainer
           title={user.login}
