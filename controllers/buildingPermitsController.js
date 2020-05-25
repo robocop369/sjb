@@ -4,7 +4,7 @@ const axios = require("axios");
 
 // Defining methods for the chicagoDataController
 module.exports = {
-  findAll: function (req, res) {
+  findAllBuildingPermits: function (req, res) {
     if (!req.query.q) {
       req.query.q = "22";
     }
@@ -25,6 +25,7 @@ module.exports = {
       url: url,
       params: {
         ward: `${req.query.q}`,
+        // permit_type: "PERMIT - EASY PERMIT PROCESS",
         // data: {
         //     "$limit": 500
         //     "$$app_token": `${process.env.BEST_BUY_API_KEY}`
@@ -35,9 +36,39 @@ module.exports = {
     console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', req.query.q);
     axios (axiosConfig)
       .then(results => {
-        console.log("RESULTS: ", results.data.length);
-        // console.log("Retrieved " + data.length + " records from the dataset!");
-        res.json([...results.data]);
+        // console.log("RESULTS: ", results.data);
+        console.log("Retrieved " + results.data.length + " records from the dataset!");
+        let permitTypes = {};
+        // for each result
+        results.data.forEach(result => {
+          // -- see if perm type is in our permtypes obj
+          // PERMIT - EASY PERMIT PROCESS
+          let permType = result.permit_type.replace(/ /g, '-');
+          if (permitTypes[permType]) {
+            // -- if that prop does exist increment that props value
+            permitTypes[permType] = permitTypes[permType] + 1;
+          } else {
+            // -- if that prop doesnt exist, add that property to permtypes obj with a value of 1; 
+            permitTypes[permType] = 1;
+          }
+        });
+        let things = []
+
+        for (const permitType in permitTypes) {
+          things.push({
+            y: permitTypes[permitType],
+            label: permitType
+          })
+        }
+
+        console.log('??????????????????????????', permitTypes, things)
+        /*
+          {
+            permitType1: 4,
+            permitType2: 5
+          }
+        */
+        res.json(things);
       })
       .catch(err => console.log(err));
     // return {

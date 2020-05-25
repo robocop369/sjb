@@ -19,7 +19,7 @@ export default {
   },
 
   // Gets all buildingpermit data
-  findAll: function() {
+  findAllBuildingPermits: function() {
     return axios.get("/api/buildingpermits");
   },
   
