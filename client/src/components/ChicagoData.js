@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import CardChicagoData from "../components/CardChicagoData";
-import Row from "../components/Row";
+import CardChicagoData from "./CardChicagoData";
+import Row from "./Row";
 import API from "../utils/API";
-import ToggleButtonGroup from "../components/Bootstrap/ToggleButtonGroup";
-import ToggleButton from "../components/Bootstrap/ToggleButton";
+import ToggleButtonGroup from "./Bootstrap/ToggleButtonGroup";
+import ToggleButton from "./Bootstrap/ToggleButton";
 
 
 function ChicagoData() {
@@ -47,7 +47,7 @@ function ChicagoData() {
   // }
 
   function loadUsers() {
-    API.findAll()
+    API.findAllBuildingPermits()
       .then(users => {
         setUsers(users);
         setUser(users[0]);
@@ -69,9 +69,6 @@ function ChicagoData() {
 
       <Row>
         <CardChicagoData
-          // title={user.login}
-          // image={user.image}
-          // profileUrl={user.profileUrl}
         />
       </Row>
     </div>

@@ -4,7 +4,7 @@ const buildingPermitsController = require("../../controllers/buildingPermitsCont
 // Matches with "/api/buildingpermits"
 router
   .route("/")
-  .get(buildingPermitsController.findAll)
+  .get(buildingPermitsController.findAllBuildingPermits)
 
 
 
