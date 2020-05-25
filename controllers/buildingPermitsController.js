@@ -10,35 +10,42 @@ module.exports = {
     }
     //https://data.cityofchicago.org/resource/7nii-7srd.json abandond buildings
      // https://data.cityofchicago.org/resource/building-permits.json
+    //  https://data.cityofchicago.org/resource/ydr8-5enu.json
+
     // https://data.cityofchicago.org/resource/22u3-xenr.json  building violations
     
     // https://data.cityofchicago.org/resource/s6ha-ppgi.json affordable housing dev
     // https://data.cityofchicago.org/Community-Economic-Development/Affordable-Rental-Housing-Developments/dkgm-i9fi
 
 
-    const url = "https://data.cityofchicago.org/resource/7nii-7srd.json"
-    const params = {
-          ward: `${req.query.q}`,
-             // limit: 500,
-          // app_token:`${process.env.BEST_BUY_API_KEY}`
-          
-          // data: {
-          //   "$limit": 500,
-          //   "$$app_token": `${process.env.BEST_BUY_API_KEY}`
-          }
+    const url = "https://data.cityofchicago.org/resource/ydr8-5enu.json"
+    
+    var axiosConfig = {
+      method: "get",
+      url: url,
+      params: {
+        ward: `${req.query.q}`,
+        // data: {
+        //     "$limit": 500
+        //     "$$app_token": `${process.env.BEST_BUY_API_KEY}`
+        //   }
+      }
+    }
     
     console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', req.query.q);
-    axios
-      .get(url, {params})        
+    axios (axiosConfig)
       .then(results => {
-        console.log("RESULTS: ", results.data);
+        console.log("RESULTS: ", results.data.length);
         // console.log("Retrieved " + data.length + " records from the dataset!");
         res.json([...results.data]);
       })
       .catch(err => console.log(err));
-
+    // return {
+    //   count: results.data.length
+    // }
 
   },
+
   findByClass: function(req, res) {
     if (req.query.q) {
       req.query.q = "mobile";
