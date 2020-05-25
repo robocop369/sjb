@@ -17,6 +17,11 @@ export default {
   saveLandlord: function(landlordData) {
     return axios.post("/api/landlords", landlordData);
   },
+
+  // Gets all buildingpermit data
+  findAll: function() {
+    return axios.get("/api/buildingpermits");
+  },
   
   fetchUsers: function() {
     return axios

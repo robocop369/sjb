@@ -7,37 +7,35 @@ import "./style.css";
 function CardContainer({ title, image, profileUrl, handleBtnClick }) {
   return (
     <div className="row">
-     
-     <div className="col-4">
-   
-       <Cardleft
+
+      <div className="col-4">
+
+        <Cardleft
           title={title}
           image={image}
           profileUrl={profileUrl}
           handleBtnClick={handleBtnClick}
         />
-      {/* </div>  */}
       </div>
-            <div className="col-4">
-       
+      <div className="col-4">
+
         <Cardmiddle
           title={title}
           image={image}
           profileUrl={profileUrl}
         />
       </div>
-      {/* </div>  */}
       <div className="col-4">
-      
-         <Cardright
+
+        <Cardright
           title={title}
           image={image}
           profileUrl={profileUrl}
           handleBtnClick={handleBtnClick}
         />
       </div>
-    
-   </div>
+
+    </div>
   );
 }
 

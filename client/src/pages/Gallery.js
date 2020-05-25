@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import CardContainer from "../components/LatestDev/CardContainer";
-import Row from "../components/LatestDev/Row";
-import APILatestdev from "../utils/APILatestdev";
-// import ToggleButtonGroup from "../components/Bootstrap/ToggleButtonGroup";
+import CardContainer from "../components/CardContainer";
+import Row from "../components/Row";
+import API from "../utils/API";
+import ToggleButtonGroup from "../components/Bootstrap/ToggleButtonGroup";
+import ToggleButton from "../components/Bootstrap/ToggleButton";
 
 function Gallery() {
   const [user, setUser] = useState({});
@@ -45,10 +46,10 @@ function Gallery() {
   }
 
   function loadUsers() {
-    APILatestdev.fetchUsers()
+    API.fetchUsers()
       .then(users => {
         setUsers(users);
-        setUser(users[0]);
+        setUser(users[5]);
       })
       .catch(err => console.log(err));
   }
@@ -56,13 +57,19 @@ function Gallery() {
   return (
     <div>
       <h1 className="text-center">Checkout the latest activity here</h1>
-      {/* <ToggleButtonGroup/> */}
+      <ToggleButtonGroup
+          name="latest"
+          >
+          <ToggleButton value={'a'}>Landlord Complaints</ToggleButton>
+          <ToggleButton value={'b'}>Housing Orginizations</ToggleButton>
+          <ToggleButton value={'c'}>Latest Housing Developments</ToggleButton>
+        </ToggleButtonGroup>
       <p className="text-center h3">Click on the arrows to browse through each category</p>
       <Row>
         <CardContainer
           title={user.login}
           image={user.image}
-          profileUrl={user.profileUrl}s
+          profileUrl={user.profileUrl}
           handleBtnClick={handleBtnClick}
         />
       </Row>
