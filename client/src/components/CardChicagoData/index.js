@@ -1,77 +1,70 @@
-import React from "react";
-import CardBody from "../CardBody";
-import CardImg from "../CardImage";
-import CardHeading from "../CardHeading";
-import "./style.css";
+import React, { Component } from 'react';
+import CanvasJSReact from '../../assets/canvasjs.react';
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-function Cardmiddle({ title, image, profileUrl }) {
-  return (
-    <div>
-      <CardHeading title={title} />
-      <CardImg image={image} />
-      <CardBody profileUrl={profileUrl} />
-      {!image && <i className="fa fa-spinner fa-spin" aria-hidden="true" />}
-    </div>
-  );
+var updateInterval = 500;
+class DynamicColumnChart extends Component {
+	constructor() {
+		super();
+		this.updateChart = this.updateChart.bind(this);
+	}
+	componentDidMount(){
+		setInterval(this.updateChart, updateInterval);
+	}
+	updateChart() {
+		var dpsColor, dpsTotal = 0, deltaY, yVal;
+		var dps = this.chart.options.data[0].dataPoints;
+		
+		for (var i = 0; i < dps.length; i++) {
+			deltaY = Math.round(2 + Math.random() *(-2-2));
+			yVal = deltaY + dps[i].y > 0 ? (deltaY + dps[i].y < 100 ? dps[i].y + deltaY : 100) : 0;
+			dpsColor = yVal >= 90 ? "#e40000" : yVal >= 70 ? "#ec7426" : yVal >= 50 ? "#81c2ea" : "#88df86 ";
+			dps[i] = {label: "Core "+(i+1) , y: yVal, color: dpsColor};
+			dpsTotal += yVal;
+		}
+		this.chart.options.data[0].dataPoints = dps;
+		this.chart.options.title.text = "CPU Usage " + Math.round(dpsTotal / 6) + "%";
+		this.chart.render();
+	}
+	render() {
+		const options = {
+			theme: "dark2",
+			title: {
+				text: "CPU Usage"
+			},
+			subtitles: [{
+				text: "Intel Core i7 980X @ 3.33GHz"
+			}],
+			axisY: {
+				title: "CPU Usage (%)",
+				suffix: "%",
+			maximum: 100
+			},
+			data: [{
+				type: "column",
+				yValueFormatString: "#,###'%'",
+				indexLabel: "{y}",
+				dataPoints: [
+					{ label: "Core 1", y: 68 },
+					{ label: "Core 2", y: 3 },
+					{ label: "Core 3", y: 8 },
+					{ label: "Core 4", y: 87 },
+					{ label: "Core 5", y: 2 },
+					{ label: "Core 6", y: 6 }
+				]
+			}]
+		}
+		
+		return (
+		<div>
+			<h1>React Dynamic Line Chart</h1>
+			<CanvasJSChart options = {options} 
+				onRef={ref => this.chart = ref}
+			/>
+			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+		</div>
+		);
+	}
 }
 
-export default Cardmiddle;
-
-
-
-
-// /* App.js */
-// var React = require('react');
-// var Component = React.Component;
-// var CanvasJSReact = require('./canvasjs.react');
-// var CanvasJS = CanvasJSReact.CanvasJS;
-// var CanvasJSChart = CanvasJSReact.CanvasJSChart;
-
-// class App extends Component {
-// 	render() {
-// 		const options = {
-// 			animationEnabled: true,
-// 			theme: "light2",
-// 			title:{
-// 				text: "Most Popular Social Networking Sites"
-// 			},
-// 			axisX: {
-// 				title: "Social Network",
-// 				reversed: true,
-// 			},
-// 			axisY: {
-// 				title: "Monthly Active Users",
-// 				labelFormatter: this.addSymbols
-// 			},
-// 			data: [{
-// 				type: "bar",
-// 				dataPoints: [
-// 					{ y:  2200000000, label: "Facebook" },
-// 					{ y:  1800000000, label: "YouTube" },
-// 					{ y:  800000000, label: "Instagram" },
-// 					{ y:  563000000, label: "Qzone" },
-// 					{ y:  376000000, label: "Weibo" },
-// 					{ y:  336000000, label: "Twitter" },
-// 					{ y:  330000000, label: "Reddit" }
-// 				]
-// 			}]
-// 		}
-// 		return (
-// 		<div>
-// 			<CanvasJSChart options = {options}
-// 				onRef={ref => this.chart = ref}
-// 			/>
-// 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-// 		</div>
-// 		);
-// 	}
-// 	addSymbols(e){
-// 		var suffixes = ["", "K", "M", "B"];
-// 		var order = Math.max(Math.floor(Math.log(e.value) / Math.log(1000)), 0);
-// 		if(order > suffixes.length - 1)
-// 			order = suffixes.length - 1;
-// 		var suffix = suffixes[order];
-// 		return CanvasJS.formatNumber(e.value / Math.pow(1000, order)) + suffix;
-// 	}
-// }
-// module.exports = App;  
+export default DynamicColumnChart;
