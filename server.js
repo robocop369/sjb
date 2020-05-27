@@ -36,7 +36,13 @@ app.use(function(err, req, res, next) {
 
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds047020.mlab.com:47020/heroku_vkr6hkc6");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds047020.mlab.com:47020/heroku_vkr6hkc6", 
+  {useNewUrlParser: true, 
+  useUnifiedTopology: true,
+  usecreateIndexes: true
+  })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
 
 // NEW Mongo DB
 // mongoose
