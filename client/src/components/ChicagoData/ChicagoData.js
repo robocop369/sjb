@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import BuildingPermitApp from "../CardChicagoData/index";
+import CardChicagoData from "../CardChicagoData";
 import Row from "../Row";
 import API from "../../utils/API";
 import ToggleButtonGroup from "../Bootstrap/ToggleButtonGroup";
 import ToggleButton from "../Bootstrap/ToggleButton";
 
 
-
 function ChicagoData() {
-  const [thing, setUser] = useState({});
+  const [user, setUser] = useState({});
   const [users, setUsers] = useState([]);
   // const [userIndex, setUserIndex] = useState(0);
 
   // When the component mounts, a call will be made to get random users.
   useEffect(() => {
+    console.log("fact")
     loadUsers();
   }, []);
 
@@ -48,6 +48,7 @@ function ChicagoData() {
   // }
 
   function loadUsers() {
+    console.log("fiction")
     API.findAllBuildingPermits()
       .then(users => {
         setUsers(users);
@@ -55,7 +56,6 @@ function ChicagoData() {
       })
       .catch(err => console.log(err));
   }
-
   return (
     <div>
       <h1 className="text-center">Chicago Opendata Portal</h1>
@@ -69,7 +69,8 @@ function ChicagoData() {
         </ToggleButtonGroup>
 
       <Row>
-        <BuildingPermitApp
+        <CardChicagoData
+        users= {users}
         />
       </Row>
     </div>

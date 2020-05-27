@@ -52,8 +52,9 @@ module.exports = {
             permitTypes[permType] = 1;
           }
         });
+        // permit object
         let things = []
-
+        // things should be placed into 
         for (const permitType in permitTypes) {
           things.push({
             y: permitTypes[permitType],

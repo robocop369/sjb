@@ -4,12 +4,13 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 var updateInterval = 500;
 class DynamicColumnChart extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.updateChart = this.updateChart.bind(this);
 	}
 	componentDidMount(){
 		setInterval(this.updateChart, updateInterval);
+		console.log("Hello", this.props)
 	}
 	updateChart() {
 		var dpsColor, dpsTotal = 0, deltaY, yVal;
@@ -44,6 +45,8 @@ class DynamicColumnChart extends Component {
 				type: "column",
 				yValueFormatString: "#,###'%'",
 				indexLabel: "{y}",
+				// dump data from chicago buildingPermits into dataPoints
+
 				dataPoints: [
 					{ label: "Core 1", y: 68 },
 					{ label: "Core 2", y: 3 },
