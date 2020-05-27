@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt-nodejs");
 
 const UserSchema = new Schema({
+  //userID: {type: Schema.Types.ObjectId },
   email: {
     type: String,
     required: true,
@@ -21,6 +22,28 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   }
+  // ,
+  // username: { type: String, required: true },
+
+  // firstname:{ type: String, required: true },
+  // lastname: { type: String, required: true },
+
+  // address: { type: String, required: true }, 
+
+  // neighborhood: { type: String, required: true }, 
+  // ward: { type: String, required: true },
+  // alderman: { type: String, required: true },
+  // officeaddress: { type: String, required: true },
+
+  // todo: [	{	todo_id: Schema.Types.ObjectId, 
+  //           todocontent: String, 
+  //           date: Date, 
+  //           status: boolean}],
+
+  // bookmark:[{post_id: Schema.Types.ObjectId,
+  //           link: String, 
+  //           comment: String, date: Date}]
+
 });
 
 // Execute before each user.save() call
