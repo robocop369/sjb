@@ -13,6 +13,7 @@ const learnaboutusSchema = new Schema({
   facebook: String
 });
 
-const LearnAboutUs = mongoose.model("LearnAboutUs", learnaboutusSchema);
+//name in quotes is the model that shows up in mlab
+const LearnAboutUs = mongoose.model("learnaboutus", learnaboutusSchema);
 
 module.exports = LearnAboutUs;
