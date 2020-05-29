@@ -6,6 +6,7 @@ import FormControl from "../components/Forms"
 function Start() {
 
     return (
+        <div>
         <Navbar bg="dark">
             <Navbar.Brand href="#home">
                 <img
@@ -40,6 +41,7 @@ function Start() {
                 </Row>
             </Container>
         </Footer>
+        </div>
     );
 }
 
