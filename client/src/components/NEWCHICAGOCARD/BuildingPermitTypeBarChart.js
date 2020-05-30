@@ -41,14 +41,14 @@ class BuildingPermitTypeBarChart extends Component {
 			animationEnabled: true,
 			theme: "light2",
 			title:{
-				text: "Most Popular Social Networking Sites"
+				text: "Types of Building Permits Issued"
 			},
 			axisX: {
-				title: "Social Network",
+				title: " ",
 				reversed: true,
 			},
 			axisY: {
-				title: "Monthly Active Users",
+				title: "Amount of Permits Issued",
 				labelFormatter: this.addSymbols
 			},
 			data: [{
@@ -60,7 +60,7 @@ class BuildingPermitTypeBarChart extends Component {
 		// API.findAllBuildingPermits().then(response=>console.log(response))
 		return (
 		<div>
-			<h1>React Bar Chart</h1>
+			{/* <h1>React Bar Chart</h1> */}
 			<CanvasJSChart options = {options} 
 				/* onRef={ref => this.chart = ref} */
 			/>

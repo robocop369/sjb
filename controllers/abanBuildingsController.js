@@ -53,7 +53,7 @@ axios(axiosConfig)
           })
         }
 
-        // console.log('BUILDING OBJECT FROM AbanBuilding API CALL',  ABObject)
+        console.log('BUILDING OBJECT FROM AbanBuilding API CALL',  ABObject)
 
         res.json(ABObject);
       })
