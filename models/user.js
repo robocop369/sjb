@@ -40,14 +40,14 @@ const UserSchema = new Schema({
       todo_id: Schema.Types.ObjectId, 
       todo_content: String, 
       todo_date: Date, 
-      todo_status: boolean
+      todo_status: Schema.Types.Boolean
     }],
   bookmark: [ {
     bookmark_id: Schema.Types.ObjectId,
     bookmark_link: String, 
     bookmark_comment: String,
     bookmarked_date: Date,
-    bookmarked_status: boolean
+    bookmarked_status: Schema.Types.Boolean
   }]
 });
 
