@@ -4,8 +4,10 @@ import { Row, Container } from "../components/Grid";
 // import { Footer } from "../components/Footer";
 
 import Gallery from "./Gallery"
-// import Landlords from "./Landlord"
-import ChicagoData from "../components/ChicagoData"
+
+import Landlords from "./Landlord"
+import ChicagoData from "../components/ChicagoData/ChicagoData"
+
 
 function Homepage() {
  

@@ -1,80 +1,59 @@
-import React, { useEffect, useState } from "react";
-import CardChicagoData from "../CardChicagoData";
+import React from "react";
+import BuildingPermitTypeBarChart from "../NEWCHICAGOCARD/BuildingPermitTypeBarChart";
+import AbanBuildingsTypeBarChart from "../NEWCHICAGOCARD/AbanBuildingsTypeBarChart";
 import Row from "../Row";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 import ToggleButtonGroup from "../Bootstrap/ToggleButtonGroup";
 import ToggleButton from "../Bootstrap/ToggleButton";
 
 
-function ChicagoData() {
-  const [user, setUser] = useState({});
-  const [users, setUsers] = useState([]);
-  // const [userIndex, setUserIndex] = useState(0);
 
-  // When the component mounts, a call will be made to get random users.
-  useEffect(() => {
-    console.log("fact")
-    loadUsers();
-  }, []);
-
-  // function nextUser(userIndex) {
-  //   // Ensure that the user index stays within our range of users
-  //   if (userIndex >= users.length) {
-  //     userIndex = 0;
-  //   }
-  //   setUser(users[userIndex]);
-  //   setUserIndex(userIndex);
-  // }
-
-  // function previousUser(userIndex) {
-  //   // Ensure that the user index stays within our range of users
-  //   if (userIndex < 0) {
-  //     userIndex = users.length - 1;
-  //   }
-  //   setUser(users[userIndex]);
-  //   setUserIndex(userIndex);
-  // }
-
-  // function handleBtnClick(event) {
-  //   // Get the title of the clicked button
-  //   const btnName = event.target.getAttribute("data-value");
-  //   if (btnName === "next") {
-  //     const newUserIndex = userIndex + 1;
-  //     nextUser(newUserIndex);
-  //   } else {
-  //     const newUserIndex = userIndex - 1;
-  //     previousUser(newUserIndex);
-  //   }
-  // }
-
-  function loadUsers() {
-    console.log("fiction")
-    API.findAllBuildingPermits()
-      .then(users => {
-        setUsers(users);
-        setUser(users[0]);
-      })
-      .catch(err => console.log(err));
+class ChicagoData extends React.Component {
+    constructor(props) {
+    super(props)
+    this.state = {currentview:"buildingpermits"}
+    
   }
-  return (
-    <div>
-      <h1 className="text-center">Chicago Opendata Portal</h1>
-      <p className="text-center h3">Click on the arrows to browse different data sets</p>
-      <ToggleButtonGroup
+
+  rendercontent = () => {
+    if (this.state.currentview === "buildingpermits") {
+      return (<BuildingPermitTypeBarChart />)
+    } else if (this.state.currentview === "abandonedbuilding") {
+      return (<AbanBuildingsTypeBarChart />)
+    } else if (this.state.currentview === "buildingviolations") {
+      return (<h3> hello </h3>)
+    }
+  
+  }
+
+
+
+
+  render() {
+    return (
+      <div>
+
+        <h1 className="text-center">Chicago Opendata Portal</h1>
+
+        <p className="text-center h3">Click on the arrows to browse different data sets</p>
+        
+        <ToggleButtonGroup
           name="Chicago_Data"
-          >
-          <ToggleButton value={'a'}>Building Permits</ToggleButton>
-          <ToggleButton value={'b'}>Abandoned Building</ToggleButton>
-          <ToggleButton value={'c'}>Building Violations</ToggleButton>
+        >
+          <ToggleButton onClick={()=>this.setState({currentview: "buildingpermits"})} value={'a'}>Building Permits</ToggleButton>
+          <ToggleButton onClick={()=>this.setState({currentview: "abandonedbuilding"})} value={'b'}>Abandoned Building</ToggleButton>
+          <ToggleButton onClick={()=>this.setState({currentview: "buildingviolations"})}  value={'c'}>Building Violations</ToggleButton>
         </ToggleButtonGroup>
 
-      <Row>
-        <CardChicagoData
-        users= {users}
-        />
-      </Row>
-    </div>
-  );
-}
+        <Row>
+          {this.rendercontent()}
+        </Row>
+
+        </div>
+          
+          );
+          }
+          }
 
 export default ChicagoData;
+

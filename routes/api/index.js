@@ -3,6 +3,9 @@ const landlordRoutes = require("./landlords");
 const productRoutes = require("./products");
 const chicagoDataRoutes = require("./chicagoData");
 const buildingPermitsRoutes = require("./buildingPermits");
+
+const abanBuildingsRoutes = require("./abanBuildings");
+
 const userRoutes = require("./users");
 const homepageRoutes = require("./homepage");
 const learnaboutusRoutes = require("./learnaboutus");
@@ -15,6 +18,10 @@ router.use("/products", productRoutes);
 router.use("/chicagodata", chicagoDataRoutes);
 router.use("/users", userRoutes);
 router.use("/buildingpermits", buildingPermitsRoutes);
+router.use("/abanbuildings", abanBuildingsRoutes);
+
+
+
 
 module.exports = router;
 
