@@ -36,7 +36,6 @@ function Start() {
                     <Col></Col>
                     <Col md="auto"></Col>
                     <Col xs lg="2">
-
                     </Col>
                 </Row>
             </Container>
