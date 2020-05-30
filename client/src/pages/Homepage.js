@@ -4,7 +4,7 @@ import { Row, Container } from "../components/Grid";
 
 import Gallery from "./Gallery"
 import Landlords from "./Landlord"
-import ChicagoData from "../components/ChicagoData"
+import ChicagoData from "../components/ChicagoData/ChicagoData"
 
 function Homepage() {
  
