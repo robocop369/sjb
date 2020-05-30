@@ -40,18 +40,18 @@ class AbanBuildingsTypeBarChart extends Component {
 			animationEnabled: true,
 			theme: "light2",
 			title:{
-				text: "Most Popular Social Networking Sites"
+				text: "Any People Using Property - Homeless/Childen/Gangs"
 			},
 			axisX: {
-				title: "Social Network",
+				title: "Reported Findings",
 				reversed: true,
 			},
 			axisY: {
-				title: "Monthly Active Users",
+				title: "Count",
 				labelFormatter: this.addSymbols
 			},
 			data: [{
-				type: "bar",
+				type: "column",
 				dataPoints:  this.state.dataPoints
 			}]
 		}
@@ -59,7 +59,7 @@ class AbanBuildingsTypeBarChart extends Component {
 		// API.findAllBuildingPermits().then(response=>console.log(response))
 		return (
 		<div>
-			<h1>React Bar Chart</h1>
+			{/* <h1>React Bar Chart</h1> */}
 			<CanvasJSChart options = {options} 
 				/* onRef={ref => this.chart = ref} */
 			/>

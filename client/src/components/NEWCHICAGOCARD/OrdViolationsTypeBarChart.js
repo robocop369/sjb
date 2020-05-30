@@ -40,14 +40,14 @@ class OrdViolationsTypeBarChart extends Component {
 			animationEnabled: true,
 			theme: "light2",
 			title:{
-				text: "Most Popular Social Networking Sites"
+				text: "Case Dispositions for Building Ordinance Violations"
 			},
 			axisX: {
-				title: "Social Network",
+				title: "Disposition Type",
 				reversed: true,
 			},
 			axisY: {
-				title: "Monthly Active Users",
+				title: "Count",
 				labelFormatter: this.addSymbols
 			},
 			data: [{
@@ -59,7 +59,7 @@ class OrdViolationsTypeBarChart extends Component {
 		// API.findAllBuildingPermits().then(response=>console.log(response))
 		return (
 		<div>
-			<h1>React Bar Chart</h1>
+			{/* <h1>React Bar Chart</h1> */}
 			<CanvasJSChart options = {options} 
 				/* onRef={ref => this.chart = ref} */
 			/>
