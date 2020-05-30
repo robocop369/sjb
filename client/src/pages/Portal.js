@@ -1,7 +1,5 @@
 import Jumbotron from "../components/Jumbotron";
 import Navbar from "../components/Navbar";
-import Form from "../components/Forms"
-import FormControl from "../components/Forms"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 function Portal() {
