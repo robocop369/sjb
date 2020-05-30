@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landlord from "./pages/Landlord";
-import Homepage from "./pages/Homepage";
+import Dashboard from "./components/Dashboard/Dashboard";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
@@ -12,7 +12,7 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Homepage} />
+          <Route exact path="/" component={Dashboard} />
           <Route exact path="/landlord" component={Landlord} />
           <Route exact path="/landlord/:id" component={Detail} />
           {/* <Route exact path="/signin" component={SignIn} /> */}

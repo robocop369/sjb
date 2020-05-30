@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CanvasJSReact from '../../assets/canvasjs.react';
-import API from "../../utils/API";
+import CanvasJSReact from '../../../../assets/canvasjs.react';
+import API from "../../../../utils/API";
 // import { response } from 'express';
 
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
