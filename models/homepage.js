@@ -30,6 +30,6 @@ const homepageSchema = new Schema({
   }]
 });
 
-const Homepage = mongoose.model("Homepage", homepageSchema);
+const Homepage = mongoose.model("homepage", homepageSchema);
 
 module.exports = Homepage;
