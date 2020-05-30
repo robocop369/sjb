@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Row, Container } from "../components/Grid";
+// import { Footer } from "../components/Footer";
 
 import Gallery from "./Gallery"
 // import Landlords from "./Landlord"
