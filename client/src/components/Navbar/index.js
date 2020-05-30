@@ -1,9 +1,10 @@
 import React from "react";
-import {Navbar, NavbarBrandon, Form, Button} from "../Bootstrap";
+import {Navbar, Button} from "../Bootstrap";
+import Form from 'react-bootstrap/Form'
 import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-function Navbar() {
+function AppNavbar() {
   return (
     <Navbar bg="dark">
       <Navbar.Brand href="#home">
@@ -16,7 +17,7 @@ function Navbar() {
         />{''}
         <h2>Ward Housing Portal</h2>
         <Form inline>
-          <FormControl type="text" placeholder="Type in your address to find your ward" className="mr-sm-2" />
+          <Form.Control type="text" placeholder="Type in your address to find your ward" className="mr-sm-2" />
           <Button variant="outline-success">Search</Button>
         </Form>
       </Navbar.Brand>
@@ -24,4 +25,4 @@ function Navbar() {
   )
 };
 
-export default Navbar;
+export default AppNavbar;

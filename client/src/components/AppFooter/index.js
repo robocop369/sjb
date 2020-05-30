@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import {Footer, Container, Row, Col, Button} from "../Bootstrap";
 
-function Footer() {
+function AppFooter() {
   return (
     <Footer>
       <Container>
@@ -16,4 +16,4 @@ function Footer() {
     </Footer>
   )
 };
-export default Footer;
+export default AppFooter;

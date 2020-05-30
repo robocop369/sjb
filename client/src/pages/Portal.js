@@ -1,14 +1,15 @@
+import React from "react";
+import Container from "../components/Bootstrap/Container";
 import Jumbotron from "../components/Jumbotron";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
+import AppFooter from "../components/AppFooter";
+import AppNavbar from "../components/Navbar";
 function Portal() {
 
     return (
         <div>
         <nav>
-            <Navbar>
-            </Navbar>
+                <AppNavbar>
+                </AppNavbar>
         </nav>
             <br></br>
             <Container fluid>
@@ -18,7 +19,7 @@ function Portal() {
             </Container>
             <br></br>
             <Container>
-                <Footer></Footer>
+                <AppFooter></AppFooter>
             </Container>
         </div>
     );

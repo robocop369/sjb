@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.10.1",
     "concurrently": "^5.2.0",
     "nodemon": "^1.18.7"
   },
