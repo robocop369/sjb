@@ -4,6 +4,8 @@ import Cardmiddle from "../CardMiddle";
 import Cardright from "../CardRight";
 import "./style.css";
 
+// Jon [0,1,2,3,4].every(3,1) # [1,4]
+
 function CardContainer({ title, image, profileUrl, handleBtnClick }) {
   return (
     <div className="row">

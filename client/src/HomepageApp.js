@@ -4,7 +4,7 @@ import Landlord from "./pages/Landlord";
 import Homepage from "./pages/Homepage";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-import Portal from "./pages/Portal";
+// import Portal from "./pages/Portal";
 import Nav from "./components/Nav";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
           {/* <Route exact path="/portal/" component={Portal} /> */}
           {/* <Route exact path="/portal/:id/signin" component={Portal} /> */}
           {/* <Route exact path="/portal/:id/signup" component={Portal} /> */}
-          <Route exact path="/portal" component={Portal} />
+          {/* <Route exact path="/portal" component={Portal} /> */}
           {/* <Route exact path="/signup" component={SignUp} /> */}
           {/* <Route exact path="/testdata" component={TEST} /> */}
           {/* <Route exact path="/chimap" component={ChicagoMap} /> */}
