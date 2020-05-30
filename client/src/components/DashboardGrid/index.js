@@ -1,7 +1,7 @@
 import React from "react";
-import Container from "../components/Container";
-import Row from "../components/Row";
-import Col from "../components/Col";
+import Container from "../Container";
+import Row from "../Row";
+import Col from "../Col";
 
 // const DashboardGrid = (props) => {
     return (
