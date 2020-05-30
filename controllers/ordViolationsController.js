@@ -4,64 +4,65 @@ const axios = require("axios");
 
 // Defining methods for the chicagoDataController
 module.exports = {
-  findAllBuildingViolations: function (req, res) {
+  findAllOrdViolations: function (req, res) {
     if (!req.query.q) {
-      req.query.q = "22";
+      req.query.q = "1";
     }
 
     // https://data.cityofchicago.org/resource/22u3-xenr.json  building violations
+    // https://data.cityofchicago.org/resource/awqx-tuwv.json Ordinance Violations
     
-    const url = "https://data.cityofchicago.org/resource/22u3-xenr.json"
+    const url = "https://data.cityofchicago.org/resource/awqx-tuwv.json"
     
     var axiosConfig = {
       method: "get",
       url: url,
       params: {
         ward: `${req.query.q}`,
-        // permit_type: "PERMIT - EASY PERMIT PROCESS",
-        // data: {
-        //     "$limit": 500
-        //     "$$app_token": `${process.env.BEST_BUY_API_KEY}`
-        //   }
       }
     }
     
     console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', req.query.q);
     axios (axiosConfig)
       .then(results => {
-        // console.log("RESULTS: ", results.data);
+     //   console.log("RESULTS: ", results.data);
+      //   // console.log("Retrieved " + data.length + " records from the dataset!");
+      //   res.json([...results.data]);
+      // })
+      
         console.log("Retrieved " + results.data.length + " records from the dataset!");
-        let permitTypes = {};
+        let caseDispos = {};
         // for each result
         results.data.forEach(result => {
-          // -- see if perm type is in our permtypes obj
+          // -- see if perm type is in our caseDispos obj
           // PERMIT - EASY PERMIT PROCESS
-          let permType = result.permit_type.replace(/ /g, '-');
-          if (permitTypes[permType]) {
+          let caseDispo = result.case_disposition;
+          if (caseDispos[caseDispo]) {
             // -- if that prop does exist increment that props value
-            permitTypes[permType] = permitTypes[permType] + 1;
+            caseDispos[caseDispo] = caseDispos[caseDispo] + 1;
           } else {
-            // -- if that prop doesnt exist, add that property to permtypes obj with a value of 1; 
-            permitTypes[permType] = 1;
+            // -- if that prop doesnt exist, add that property to caseDispos obj with a value of 1; 
+            caseDispos[caseDispo] = 1;
           }
         });
-        let permitObject = []
+        let caseDispoObject = []
 
-        for (const permitType in permitTypes) {
-          permitObject.push({
-            y: permitTypes[permitType],
-            label: permitType
+        for (const caseDispo in caseDispos) {
+          caseDispoObject.push({
+            y: caseDispos[caseDispo],
+            label: caseDispo
           })
         }
 
-        console.log('??????????????????????????', permitTypes, permitObject)
+        console.log('BUILDING OBJECT FROM Ord Violations API CALL',  caseDispoObject)
+        // console.log('??????????????????????????', caseDispos, caseDispoObject)
         /*
           {
             permitType1: 4,
             permitType2: 5
           }
         */
-        res.json(permitObject);
+        res.json(caseDispoObject);
       })
       .catch(err => console.log(err));
     // return {
