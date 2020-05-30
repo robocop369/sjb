@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Form from "../components/Forms"
 import FormControl from "../components/Forms"
 
-function Start() {
+function Portal() {
 
     return (
         <div>
