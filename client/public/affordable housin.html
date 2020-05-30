@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Layer: Dynamic Styling</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      #map {
+        height: 95%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script>
+       var map, cachedGeoJson, searchBox;
+       var wrappedGeoJson = [];
+
+       $.ajax({
+        url: "https://data.cityofchicago.org/resource/k9yb-bpqx.json",
+        type: "GET",
+        data: {
+          "$limit" : 5000,
+          "$$app_token" : "8MsoFyxjS53a2z1L0Hjt3XtRz"
+          //update to:
+          //process.env.CHICAGO_WARD_TOKEN
+        }
+       }).done(function(data) {              
+        cachedGeoJson = data;
+        for(i=0;i<cachedGeoJson.length; i++){
+            wrappedGeoJson.push(    
+                { type: "Feature", 
+                  properties: {
+                  ward: cachedGeoJson[i].ward,
+                  },
+                  geometry: cachedGeoJson[i].the_geom
+                  }
+            )
+           };
+           console.log(wrappedGeoJson[40])
+        initMap();
+      });
+      
+       $.ajax({
+        url: "https://data.cityofchicago.org/resource/s6ha-ppgi.json?$where=within_circle(location, 41.9169, 87.6879, 1000)",
+        type: "GET",
+        data: {
+          "$limit" : 5000,
+          "$$app_token" : "8MsoFyxjS53a2z1L0Hjt3XtRz"
+          //update to:
+          //process.env.CHICAGO_WARD_TOKEN
+        }
+       }).done(function(data) {              
+        // cachedGeoJson = data;
+        // for(i=0;i<cachedGeoJson.length; i++){
+        //     wrappedGeoJson.push(    
+        //         { type: "Feature", 
+        //           properties: {
+        //           ward: cachedGeoJson[i].ward,
+        //           },
+        //           geometry: cachedGeoJson[i].the_geom
+        //           }
+        //     )
+        //    };
+        console.log(data)
+        //initMap();
+      });
+
+    //   function initMap() {
+    //     var bounds = new google.maps.LatLngBounds();
+    //     // searchBox = new google.maps.places.SearchBox(input);
+    //     map = new google.maps.Map(document.getElementById('map'), {
+    //           //chicago coordinates hard
+    //           center: {lat: 41.845, lng: -87.7},
+    //           zoom: 10.8
+    //         });
+
+    //     console.log(cachedGeoJson);
+    //     console.log(wrappedGeoJson);
+            
+    //     for(i=0;i<wrappedGeoJson.length; i++){
+    //       //j = ['purple','red','yellow','blue', 'beige']
+    //       //google.maps.Data.StyleOptions} */({
+    //     //     fillColor: color,
+    //       map.data.addGeoJson(wrappedGeoJson[i]);
+    //       map.data.setStyle((wrappedGeoJson[i]), {fillColor: 'green'})
+    //     };
+
+    //     // When the user hovers, tempt them to click by outlining the wards.
+    //     map.data.addListener('mouseover', function(event) {
+    //       map.data.revertStyle();
+    //       //map.data.overrideStyle(event.feature, {strokeWeight: 6});
+    //       map.data.overrideStyle(event.feature, {fillColor: 'green'});
+    //       map.data.overrideStyle(event.feature, {fillColor: 'green'});
+    //       console.log(this.ward);
+    //     });
+    //       // Bold on Click
+    //       map.data.addListener('click', function(event) {
+    //       map.data.overrideStyle(event.feature, {strokeWeight: 5});
+    //     });
+
+    //     // Off hover, revert to gray and unbold
+    //     map.data.addListener('mouseout', function(event) {
+    //       map.data.revertStyle();
+    //     });
+
+    //     // Create the search box and link it to the UI element.
+    //     var input = document.getElementById('pac-input');
+    //     var searchBox = new google.maps.places.SearchBox(input);
+
+    //     // Bias the SearchBox results towards current map's viewport.
+    //     map.addListener('bounds_changed', function() {
+    //       searchBox.setBounds(map.getBounds());
+    //     });
+
+    //     var markers = [];
+    //     // Listen for the event fired when the user selects a prediction and retrieve more details for that place.
+    //     searchBox.addListener('places_changed', function() {
+    //       var places = searchBox.getPlaces();
+
+    //       if (places.length == 0) {
+    //         return;
+    //       }
+
+    //       // Clear out the old markers.
+    //       markers.forEach(function(marker) {
+    //         marker.setMap(null);
+    //       });
+    //       markers = [];
+
+    //       // For each place, get the icon, name and location.
+    //       var bounds = new google.maps.LatLngBounds();
+    //       places.forEach(function(place) {
+    //         if (!place.geometry) {
+    //           console.log("Returned place contains no geometry");
+    //           return;
+    //         }
+    //         var icon = {
+    //           url: place.icon,
+    //           size: new google.maps.Size(71, 71),
+    //           origin: new google.maps.Point(0, 0),
+    //           anchor: new google.maps.Point(17, 34),
+    //           scaledSize: new google.maps.Size(25, 25),
+    //           zoom: new google.maps.zoom(6)
+    //         };
+
+    //         // Create a marker for each place.
+    //         markers.push(new google.maps.Marker({
+    //           map: map,
+    //           icon: icon,
+    //           title: place.name,
+    //           position: place.geometry.location
+    //         }));
+
+    //         if (place.geometry.viewport) {
+    //           // Only geocodes have viewport.
+    //           bounds.union(place.geometry.viewport);
+    //         } else {
+    //           bounds.extend(place.geometry.location);
+    //         }
+    //       });
+    //       map.fitBounds(bounds);
+    //     });
+        
+        
+        
+        
+    //     // updateURL
+    //     //push data
+    //     //render small map 
+        //}
+        
+
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMZFIRsA7_WHXMc83EcgwaANy8xWzqnco&libraries=places">
+    //src="https://maps.googleapis.com/maps/api/js?key=process.env.GOOGLE_MAPS_API_KEY">
+    //fix api key
+    </script>
+  </body>
+</html>
