@@ -4,7 +4,7 @@ const axios = require("axios");
 module.exports = {
   findAllAbanBuildings: function (req, res) {
     if (!req.query.q) {
-      req.query.q = "22";
+      req.query.q = "1";
     }
 
     const url = "https://data.cityofchicago.org/resource/7nii-7srd.json"
@@ -20,8 +20,8 @@ module.exports = {
         }
     }
     
-    console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', req.query.q);
-    console.log('axiosConfig', axiosConfig);
+    // console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', req.query.q);
+    // console.log('axiosConfig', axiosConfig);
 axios(axiosConfig)
       .then(results => {
       //   console.log("RESULTS: ", results.data);
@@ -29,7 +29,7 @@ axios(axiosConfig)
       //   res.json([...results.data]);
       // })
       
-        console.log("Retrieved " + results.data.length + " records from the dataset!");
+        // console.log("Retrieved " + results.data.length + " records from the dataset!");
         let peopleTypes = {};
         // for each result
         results.data.forEach(result => {
@@ -53,7 +53,7 @@ axios(axiosConfig)
           })
         }
 
-        console.log('BUILDING OBJECT FROM AbanBuilding API CALL',  ABObject)
+        // console.log('BUILDING OBJECT FROM AbanBuilding API CALL',  ABObject)
 
         res.json(ABObject);
       })

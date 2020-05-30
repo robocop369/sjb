@@ -1,6 +1,7 @@
 import React from "react";
 import BuildingPermitTypeBarChart from "../NEWCHICAGOCARD/BuildingPermitTypeBarChart";
 import AbanBuildingsTypeBarChart from "../NEWCHICAGOCARD/AbanBuildingsTypeBarChart";
+import OrdViolationsTypeBarChart from "../NEWCHICAGOCARD/OrdViolationsTypeBarChart";
 import Row from "../Row";
 // import API from "../../utils/API";
 import ToggleButtonGroup from "../Bootstrap/ToggleButtonGroup";
@@ -19,9 +20,9 @@ class ChicagoData extends React.Component {
     if (this.state.currentview === "buildingpermits") {
       return (<BuildingPermitTypeBarChart />)
     } else if (this.state.currentview === "abandonedbuilding") {
-      return (<AbanBuildingsTypeBarChart />)
-    } else if (this.state.currentview === "buildingviolations") {
-      return (<h3> hello </h3>)
+      return (<AbanBuildingsTypeBarChart />)   
+    } else if (this.state.currentview === "ordviolations") {
+      return (<OrdViolationsTypeBarChart />)
     }
   
   }
@@ -42,7 +43,7 @@ class ChicagoData extends React.Component {
         >
           <ToggleButton onClick={()=>this.setState({currentview: "buildingpermits"})} value={'a'}>Building Permits</ToggleButton>
           <ToggleButton onClick={()=>this.setState({currentview: "abandonedbuilding"})} value={'b'}>Abandoned Building</ToggleButton>
-          <ToggleButton onClick={()=>this.setState({currentview: "buildingviolations"})}  value={'c'}>Building Violations</ToggleButton>
+          <ToggleButton onClick={()=>this.setState({currentview: "ordviolations"})}  value={'c'}>Ordinance Violations</ToggleButton>
         </ToggleButtonGroup>
 
         <Row>
