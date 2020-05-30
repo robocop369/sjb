@@ -22,6 +22,17 @@ export default {
   findAllBuildingPermits: function() {
     return axios.get("/api/buildingpermits");
   },
+
+  // Gets all abanbuildings data
+  findAllAbanBuildings: function () {
+    return axios.get("/api/abanbuildings");
+  },
+
+  // Gets all abanbuildings data
+  findAllOrdViolations: function () {
+    return axios.get("/api/ordviolations");
+  },
+
   
   fetchUsers: function() {
     return axios

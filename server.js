@@ -1,22 +1,25 @@
 const express = require("express");
 var cors = require("cors");
+//const cookieParser = require('cookie-parser');
+//app.use(cookieParser());
 
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 require("dotenv").config();
+
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Add routes, both API and view
 app.use(routes);
-
 
 // Error handling
 app.use(function(err, req, res, next) {
@@ -28,22 +31,14 @@ app.use(function(err, req, res, next) {
   }
 });
 
-// Send every request to the React app
-// Define any API routes before this runs
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/index.html"));
-// });
-
-
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds047020.mlab.com:47020/heroku_vkr6hkc6");
-
-// NEW Mongo DB
-// mongoose
-//   .connect(process.env.MONGODB_URI || "mongodb+srv://dbUser:dbUser@clustersjb-armq0.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, 
-//   useUnifiedTopology: true})
-//   .then(() => console.log('MongoDB connected'))
-//   .catch(err => console.log(err));
+mongoose.connect(process.env.MONGODB_URI || process.env.DB_CONNECTION, 
+  {useNewUrlParser: true, 
+  useUnifiedTopology: true,
+  usecreateIndexes: true
+  })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
 
 // Start the API server
 app.listen(PORT, function() {
