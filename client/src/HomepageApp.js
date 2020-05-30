@@ -15,6 +15,8 @@ function App() {
           <Route exact path="/" component={Homepage} />
           <Route exact path="/landlord" component={Landlord} />
           <Route exact path="/landlord/:id" component={Detail} />
+          {/* <Route exact path="/signin" component={SignIn} /> */}
+          {/* <Route exact path="/signup" component={SignUp} /> */}
           <Route component={NoMatch} />
         </Switch>
       </div>
