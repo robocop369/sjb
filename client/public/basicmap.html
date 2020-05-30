@@ -72,10 +72,8 @@
         // When the user hovers, tempt them to click by outlining the wards.
         map.data.addListener('mouseover', function(event) {
         map.data.revertStyle();
-        map.data.overrideStyle(event.feature, {fillColor: 'green'});
-        console.log(event.feature.j.ward);
-        
-        //have ward label show
+        map.data.overrideStyle(event.feature, {fillColor: 'blue'});        
+        //have ward label show in corner
         var wardLabel = document.createElement("span");
         wardLabel.textContent = " ";
         wardLabel.setAttribute("id", "wardLabel");
@@ -97,9 +95,13 @@
         });
           // Bold on Click
           map.data.addListener('click', function(event) {
-          map.data.overrideStyle(event.feature, {strokeWeight: 5});
-
-          //url and ward num 
+              map.data.overrideStyle(event.feature, {strokeWeight: 5});
+              wardid = event.feature.j.ward
+              //URL
+              // app.get(/:wardid/signin, function (req, res) {
+              // res.send('/a/')
+              // })
+              
         });
 
         // Off hover, revert to gray and unbold

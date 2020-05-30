@@ -16,9 +16,9 @@ function App() {
           <Route exact path="/" component={Homepage} />
           <Route exact path="/landlord" component={Landlord} />
           <Route exact path="/landlord/:id" component={Detail} />
-          {/* <Route exact path="/portal/:id" component={Portal} /> */}
+          {/* <Route exact path="/portal/" component={Portal} /> */}
           {/* <Route exact path="/portal/:id/signin" component={Portal} /> */}
-          {/* <Route exact path="/portal/:id/signin" component={Portal} /> */}
+          {/* <Route exact path="/portal/:id/signup" component={Portal} /> */}
           <Route exact path="/portal" component={Portal} />
           {/* <Route exact path="/signup" component={SignUp} /> */}
           {/* <Route exact path="/testdata" component={TEST} /> */}

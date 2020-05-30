@@ -60,9 +60,13 @@ function Gallery() {
       <ToggleButtonGroup
           name="latest"
           >
-          <ToggleButton value={'a'}>Landlord Complaints</ToggleButton>
+          {/* <ToggleButton value={'a'}>Landlord Complaints</ToggleButton>
           <ToggleButton value={'b'}>Housing Orginizations</ToggleButton>
-          <ToggleButton value={'c'}>Latest Housing Developments</ToggleButton>
+          <ToggleButton value={'c'}>Latest Housing Developments</ToggleButton> */}
+          <ToggleButton value={'a'}>Affordable Housing Properties</ToggleButton>
+          <ToggleButton value={'b'}>Housing Organizations</ToggleButton>
+          <ToggleButton value={'c'}>Urban Development Projects</ToggleButton>
+
         </ToggleButtonGroup>
       <p className="text-center h3">Click on the arrows to browse through each category</p>
       <Row>
