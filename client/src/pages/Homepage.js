@@ -1,9 +1,10 @@
 import React from "react";
 
 import { Row, Container } from "../components/Grid";
+// import { Footer } from "../components/Footer";
 
 import Gallery from "./Gallery"
-import Landlords from "./Landlord"
+// import Landlords from "./Landlord"
 import ChicagoData from "../components/ChicagoData"
 
 function Homepage() {
@@ -18,9 +19,12 @@ function Homepage() {
         <Row>
         <Gallery/>
         </Row>
-        <Row>
+        {/* <Row>
         <Landlords/>
-        </Row>
+        </Row> */}
+        {/* <Row>
+        <Footer/>
+        </Row> */}
       </Container>
     );
   }
