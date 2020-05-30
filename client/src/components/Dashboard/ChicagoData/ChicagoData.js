@@ -1,11 +1,11 @@
 import React from "react";
-import BuildingPermitTypeBarChart from "../NEWCHICAGOCARD/BuildingPermitTypeBarChart";
-import AbanBuildingsTypeBarChart from "../NEWCHICAGOCARD/AbanBuildingsTypeBarChart";
-import OrdViolationsTypeBarChart from "../NEWCHICAGOCARD/OrdViolationsTypeBarChart";
-import Row from "../Row";
+import BuildingPermitTypeBarChart from "./NEWCHICAGOCARD/BuildingPermitTypeBarChart";
+import AbanBuildingsTypeBarChart from "./NEWCHICAGOCARD/AbanBuildingsTypeBarChart";
+import OrdViolationsTypeBarChart from "./NEWCHICAGOCARD/OrdViolationsTypeBarChart";
+import Row from "../../Row";
 // import API from "../../utils/API";
-import ToggleButtonGroup from "../Bootstrap/ToggleButtonGroup";
-import ToggleButton from "../Bootstrap/ToggleButton";
+import ToggleButtonGroup from "../../Bootstrap/ToggleButtonGroup";
+import ToggleButton from "../../Bootstrap/ToggleButton";
 
 
 
@@ -36,7 +36,7 @@ class ChicagoData extends React.Component {
 
         <h1 className="text-center">Chicago Opendata Portal</h1>
 
-        <p className="text-center h3">Click on the arrows to browse different data sets</p>
+        <p className="text-center h3">Click on the buttons below to review charts for each category</p>
         
         <ToggleButtonGroup
           name="Chicago_Data"

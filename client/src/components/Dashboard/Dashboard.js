@@ -1,15 +1,15 @@
 import React from "react";
 
-import { Row, Container } from "../components/Grid";
+import { Row, Container } from "../Grid";
 // import { Footer } from "../components/Footer";
 
-import Gallery from "./Gallery"
+import Gallery from "../../pages/Gallery"
 
-import Landlords from "./Landlord"
-import ChicagoData from "../components/ChicagoData/ChicagoData"
+import Landlords from "../../pages/Landlord"
+import ChicagoData from "./ChicagoData/ChicagoData"
 
 
-function Homepage() {
+function Dashboard() {
  
 
     return (
@@ -32,4 +32,4 @@ function Homepage() {
   }
 
 
-export default Homepage;
+export default Dashboard;
