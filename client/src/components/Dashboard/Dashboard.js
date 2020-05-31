@@ -2,6 +2,8 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import ChicagoData from "./ChicagoData/ChicagoData";
 import {Row, Container } from "../Grid";
+import AppAccordion from "../AppAccordion"
+
 // import { Footer } from "../components/Footer";
 
 function Dashboard() {
@@ -22,9 +24,9 @@ function Dashboard() {
         <Row>
           <Col md={{ span: 6, offset: 3 }}>DATASHEET</Col>
         </Row>
-        {/* <Row>
-        <Landlords/>
-        </Row> */}
+        <Row>
+        <AppAccordion/>
+        </Row>
         {/* <Row>
         <Footer/>
         </Row> */}
