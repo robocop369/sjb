@@ -1,6 +1,6 @@
 import Col from "react-bootstrap/Col";
 import ChicagoData from "./ChicagoData/ChicagoData"
-// import { Col, Row, Container } from "../Grid";
+import { Col, Row, Container } from "../Grid";
 // import { Footer } from "../components/Footer";
 
 function Dashboard() {
