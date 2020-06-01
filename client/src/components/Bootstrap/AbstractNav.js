@@ -143,4 +143,4 @@ const AbstractNav = React.forwardRef(
 
 AbstractNav.propTypes = propTypes;
 
-export default AbstractNav;
+export {AbstractNav};

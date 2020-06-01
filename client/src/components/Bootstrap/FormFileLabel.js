@@ -48,4 +48,4 @@ const FormFileLabel = React.forwardRef(
 FormFileLabel.displayName = 'FormFileLabel';
 FormFileLabel.propTypes = propTypes;
 
-export default FormFileLabel;
+export {FormFileLabel};

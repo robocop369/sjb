@@ -46,4 +46,4 @@ function Detail(props) {
   }
 
 
-export default Detail;
+export {Detail};

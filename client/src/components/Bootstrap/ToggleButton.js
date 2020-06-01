@@ -108,4 +108,4 @@ const ToggleButton = React.forwardRef(
 ToggleButton.propTypes = propTypes;
 ToggleButton.displayName = 'ToggleButton';
 
-export default ToggleButton;
+export {ToggleButton};

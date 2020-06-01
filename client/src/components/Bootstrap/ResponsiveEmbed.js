@@ -53,4 +53,4 @@ const ResponsiveEmbed = React.forwardRef(
 ResponsiveEmbed.propTypes = propTypes;
 ResponsiveEmbed.defaultProps = defaultProps;
 
-export default ResponsiveEmbed;
+export {ResponsiveEmbed};

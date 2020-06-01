@@ -80,4 +80,4 @@ NavLink.displayName = 'NavLink';
 NavLink.propTypes = propTypes;
 NavLink.defaultProps = defaultProps;
 
-export default NavLink;
+export {NavLink};

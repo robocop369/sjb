@@ -7,4 +7,4 @@ const Sucess = (props) => {
     );
 }
 
-export default Sucess;
+export {Sucess};

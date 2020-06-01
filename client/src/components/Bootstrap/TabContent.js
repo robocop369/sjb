@@ -37,4 +37,4 @@ const TabContent = React.forwardRef(
 
 TabContent.propTypes = propTypes;
 
-export default TabContent;
+export {TabContent};

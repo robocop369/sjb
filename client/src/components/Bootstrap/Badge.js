@@ -54,4 +54,4 @@ Badge.displayName = 'Badge';
 Badge.propTypes = propTypes;
 Badge.defaultProps = defaultProps;
 
-export default Badge;
+export {Badge};

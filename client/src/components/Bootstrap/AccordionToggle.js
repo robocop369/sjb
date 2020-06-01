@@ -64,4 +64,4 @@ const AccordionToggle = React.forwardRef(
 
 AccordionToggle.propTypes = propTypes;
 
-export default AccordionToggle;
+export {AccordionToggle};

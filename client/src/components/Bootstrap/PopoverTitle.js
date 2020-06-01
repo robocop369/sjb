@@ -39,4 +39,4 @@ const PopoverTitle = React.forwardRef(
 
 PopoverTitle.propTypes = propTypes;
 
-export default PopoverTitle;
+export {PopoverTitle};

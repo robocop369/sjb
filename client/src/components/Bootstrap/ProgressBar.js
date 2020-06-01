@@ -211,4 +211,4 @@ ProgressBar.displayName = 'ProgressBar';
 ProgressBar.propTypes = propTypes;
 ProgressBar.defaultProps = defaultProps;
 
-export default ProgressBar;
+export {ProgressBar};

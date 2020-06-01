@@ -550,4 +550,4 @@ Carousel.defaultProps = defaultProps;
 Carousel.Caption = CarouselCaption;
 Carousel.Item = CarouselItem;
 
-export default Carousel;
+export {Carousel};

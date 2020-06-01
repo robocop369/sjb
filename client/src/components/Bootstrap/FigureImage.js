@@ -41,4 +41,4 @@ FigureImage.displayName = 'FigureImage';
 FigureImage.propTypes = propTypes;
 FigureImage.defaultProps = defaultProps;
 
-export default FigureImage;
+export {FigureImage};

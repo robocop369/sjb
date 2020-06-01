@@ -83,4 +83,4 @@ const FormFileInput = React.forwardRef(
 FormFileInput.displayName = 'FormFileInput';
 FormFileInput.propTypes = propTypes;
 
-export default FormFileInput;
+export {FormFileInput};

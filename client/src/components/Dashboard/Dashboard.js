@@ -1,10 +1,11 @@
-import React from "react";
-import Col from "react-bootstrap/Col";
-import ChicagoData from "./ChicagoData/ChicagoData";
+import {React} from "react";
+import {Col} from "../Bootstrap/Col";
+import {Button} from "../Bootstrap/Button";
+// import AppFooter from "../AppFooter";
 import {Row, Container } from "../Grid";
-import AppAccordion from "../AppAccordion"
+import {AppAccordion} from "../AppAccordion"
+import {ChicagoData} from "./ChicagoData/ChicagoData";
 
-// import { Footer } from "../components/Footer";
 
 function Dashboard() {
 
@@ -13,23 +14,20 @@ function Dashboard() {
     <div clasName="container dashboard">
       <Container>
         <Row>
-          <Col md={4}><button href="#portal" variant="primary">Map</button></Col>
+          <Col md={{ span: 4, offset: 4 }}><Button href="#portal" variant="primary">Map</Button></Col>
           <Col md={{ span: 4, offset: 4 }}>TESTING SPACE</Col>
           <br>
           </br>
         </Row>
         <Row>
-          <Col md={{ span: 3, offset: 3 }}>{<ChicagoData />}</Col>
-        </Row>
-        <Row>
-          <Col md={{ span: 6, offset: 3 }}>DATASHEET</Col>
+          <Col md={{ span: 4, offset: 4 }}>{<ChicagoData />}</Col>
         </Row>
         <Row>
         <AppAccordion/>
         </Row>
-        {/* <Row>
-        <Footer/>
-        </Row> */}
+        <Row>
+        {/* <AppFooter></AppFooter> */}
+        </Row>
       </Container>
     </div>
   );

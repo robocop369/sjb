@@ -138,4 +138,4 @@ Toast.displayName = 'Toast';
 Toast.Body = Body;
 Toast.Header = Header;
 
-export default Toast;
+export {Toast};

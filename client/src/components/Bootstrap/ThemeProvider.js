@@ -37,4 +37,4 @@ function createBootstrapComponent(Component, opts) {
 }
 
 export { createBootstrapComponent, Consumer as ThemeConsumer };
-export default ThemeProvider;
+export {ThemeProvider};

@@ -214,4 +214,4 @@ FormFile.defaultProps = defaultProps;
 FormFile.Input = FormFileInput;
 FormFile.Label = FormFileLabel;
 
-export default FormFile;
+export {FormFile};

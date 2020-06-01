@@ -180,4 +180,4 @@ FormControl.propTypes = propTypes;
 
 FormControl.Feedback = Feedback;
 
-export default FormControl;
+export {FormControl};

@@ -117,4 +117,4 @@ Card.Header = createWithBsPrefix('card-header');
 Card.Footer = createWithBsPrefix('card-footer');
 Card.ImgOverlay = createWithBsPrefix('card-img-overlay');
 
-export default Card;
+export {Card};

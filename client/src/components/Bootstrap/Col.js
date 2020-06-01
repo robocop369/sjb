@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-import React from 'react';
-import PropTypes from 'prop-types';
+import {classNames} from 'classnames';
+import {React} from 'react';
+import {PropTypes} from 'prop-types';
 
 import { useBootstrapPrefix } from './ThemeProvider';
 
@@ -116,4 +116,4 @@ const Col = React.forwardRef(
 Col.displayName = 'Col';
 Col.propTypes = propTypes;
 
-export default Col;
+export {Col};

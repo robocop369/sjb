@@ -65,4 +65,4 @@ Image.displayName = 'Image';
 Image.propTypes = propTypes;
 Image.defaultProps = defaultProps;
 
-export default Image;
+export {Image};

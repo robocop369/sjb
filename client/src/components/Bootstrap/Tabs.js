@@ -159,4 +159,4 @@ Tabs.propTypes = propTypes;
 Tabs.defaultProps = defaultProps;
 Tabs.displayName = 'Tabs';
 
-export default Tabs;
+export {Tabs};

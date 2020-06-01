@@ -73,4 +73,4 @@ NavbarToggle.displayName = 'NavbarToggle';
 NavbarToggle.propTypes = propTypes;
 NavbarToggle.defaultProps = defaultProps;
 
-export default NavbarToggle;
+export {NavbarToggle};

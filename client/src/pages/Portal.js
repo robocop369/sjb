@@ -1,8 +1,8 @@
-import React from "react";
-import Container from "../components/Bootstrap/Container";
-import Jumbotron from "../components/Jumbotron";
-import AppFooter from "../components/AppFooter";
-import AppNavbar from "../components/Navbar";
+import {React} from "react";
+import {Container} from "../components/Bootstrap/Container";
+import {Jumbotron} from "../components/Jumbotron";
+import {AppFooter} from "../components/AppFooter";
+import {AppNavbar} from "../components/Navbar";
 function Portal() {
 
     return (
@@ -26,4 +26,4 @@ function Portal() {
 }
 
 
-export default Portal;
+export {Portal};

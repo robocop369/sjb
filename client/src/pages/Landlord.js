@@ -119,4 +119,4 @@ function Landlords() {
   }
 
 
-export default Landlords;
+export {Landlords};

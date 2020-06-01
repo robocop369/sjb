@@ -145,4 +145,4 @@ Nav.defaultProps = defaultProps;
 Nav.Item = NavItem;
 Nav.Link = NavLink;
 
-export default Nav;
+export {Nav};

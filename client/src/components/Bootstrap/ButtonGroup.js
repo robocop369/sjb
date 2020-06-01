@@ -78,4 +78,4 @@ ButtonGroup.displayName = 'ButtonGroup';
 ButtonGroup.propTypes = propTypes;
 ButtonGroup.defaultProps = defaultProps;
 
-export default ButtonGroup;
+export {ButtonGroup};

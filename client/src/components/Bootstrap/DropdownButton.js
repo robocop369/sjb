@@ -95,4 +95,4 @@ const DropdownButton = React.forwardRef(
 DropdownButton.displayName = 'DropdownButton';
 DropdownButton.propTypes = propTypes;
 
-export default DropdownButton;
+export {DropdownButton};

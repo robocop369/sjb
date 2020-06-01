@@ -86,4 +86,4 @@ Form.Switch = Switch;
 Form.Label = FormLabel;
 Form.Text = FormText;
 
-export default Form;
+export {Form};

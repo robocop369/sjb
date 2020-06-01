@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Button } from "../Bootstrap";
-import Form from 'react-bootstrap/Form'
+import {Form} from 'react-bootstrap/Form'
 import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item

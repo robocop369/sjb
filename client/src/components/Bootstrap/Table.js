@@ -97,4 +97,4 @@ const Table = React.forwardRef(
 
 Table.propTypes = propTypes;
 
-export default Table;
+export {Table};

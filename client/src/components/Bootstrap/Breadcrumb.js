@@ -60,4 +60,4 @@ Breadcrumb.defaultProps = defaultProps;
 
 Breadcrumb.Item = BreadcrumbItem;
 
-export default Breadcrumb;
+export {Breadcrumb};

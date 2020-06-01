@@ -4,4 +4,4 @@ const ToastContext = React.createContext({
   onClose() {},
 });
 
-export default ToastContext;
+export {ToastContext};

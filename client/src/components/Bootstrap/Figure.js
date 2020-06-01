@@ -9,4 +9,4 @@ const Figure = createWithBsPrefix('figure', {
 
 Figure.Image = FigureImage;
 Figure.Caption = FigureCaption;
-export default Figure;
+export {Figure};

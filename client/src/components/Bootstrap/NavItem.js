@@ -36,4 +36,4 @@ const NavItem = React.forwardRef(
 NavItem.displayName = 'NavItem';
 NavItem.propTypes = propTypes;
 
-export default NavItem;
+export {NavItem};

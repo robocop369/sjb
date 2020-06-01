@@ -10,4 +10,4 @@ Switch.displayName = 'Switch';
 Switch.Input = FormCheck.Input;
 Switch.Label = FormCheck.Label;
 
-export default Switch;
+export {Switch};

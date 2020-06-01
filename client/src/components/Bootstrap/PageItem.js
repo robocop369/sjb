@@ -49,7 +49,7 @@ PageItem.propTypes = propTypes;
 PageItem.defaultProps = defaultProps;
 PageItem.displayName = 'PageItem';
 
-export default PageItem;
+export {PageItem};
 
 function createButton(name, defaultValue, label = name) {
   return class extends React.Component {

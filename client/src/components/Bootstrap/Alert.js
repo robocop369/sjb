@@ -124,4 +124,4 @@ Alert.Heading = createWithBsPrefix('alert-heading', {
   Component: DivStyledAsH4,
 });
 
-export default Alert;
+export {Alert};

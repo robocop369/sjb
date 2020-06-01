@@ -225,4 +225,4 @@ class Collapse extends React.Component {
 Collapse.propTypes = propTypes;
 Collapse.defaultProps = defaultProps;
 
-export default Collapse;
+export {Collapse};

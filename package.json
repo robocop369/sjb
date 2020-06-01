@@ -16,6 +16,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-decorators": "^7.10.1",
+    "@babel/plugin-syntax-export-default-from": "^7.10.1",
     "concurrently": "^5.2.0",
     "nodemon": "^1.18.7"
   },

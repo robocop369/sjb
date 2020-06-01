@@ -77,4 +77,4 @@ const DropdownToggle = React.forwardRef(
 DropdownToggle.displayName = 'DropdownToggle';
 DropdownToggle.propTypes = propTypes;
 
-export default DropdownToggle;
+export {DropdownToggle};

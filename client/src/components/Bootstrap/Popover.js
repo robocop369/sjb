@@ -103,4 +103,4 @@ Popover.defaultProps = defaultProps;
 Popover.Title = PopoverTitle;
 Popover.Content = PopoverContent;
 
-export default Popover;
+export {Popover};

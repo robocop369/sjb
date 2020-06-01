@@ -55,4 +55,4 @@ Pagination.Item = PageItem;
 Pagination.Next = Next;
 Pagination.Last = Last;
 
-export default Pagination;
+export {Pagination};

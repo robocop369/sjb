@@ -73,4 +73,4 @@ ModalHeader.displayName = 'ModalHeader';
 ModalHeader.propTypes = propTypes;
 ModalHeader.defaultProps = defaultProps;
 
-export default ModalHeader;
+export {ModalHeader};

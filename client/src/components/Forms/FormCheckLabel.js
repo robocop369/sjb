@@ -44,4 +44,4 @@ const FormCheckLabel = React.forwardRef(
 FormCheckLabel.displayName = 'FormCheckLabel';
 FormCheckLabel.propTypes = propTypes;
 
-export default FormCheckLabel;
+export {FormCheckLabel};

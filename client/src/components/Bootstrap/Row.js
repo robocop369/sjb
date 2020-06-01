@@ -116,4 +116,4 @@ Row.displayName = 'Row';
 Row.propTypes = propTypes;
 Row.defaultProps = defaultProps;
 
-export default Row;
+export {Row};

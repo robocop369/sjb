@@ -34,4 +34,4 @@ Media.propTypes = propTypes;
 
 Media.Body = createWithBsPrefix('media-body');
 
-export default Media;
+export {Media};

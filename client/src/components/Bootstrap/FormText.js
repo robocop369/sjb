@@ -45,4 +45,4 @@ const FormText = React.forwardRef(
 FormText.displayName = 'FormText';
 FormText.propTypes = propTypes;
 
-export default FormText;
+export {FormText};

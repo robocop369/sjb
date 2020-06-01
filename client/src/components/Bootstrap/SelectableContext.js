@@ -7,4 +7,4 @@ export const makeEventKey = (eventKey, href) => {
   return href || null;
 };
 
-export default SelectableContext;
+export {SelectableContext};

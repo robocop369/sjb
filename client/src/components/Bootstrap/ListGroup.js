@@ -91,4 +91,4 @@ ListGroup.displayName = 'ListGroup';
 
 ListGroup.Item = ListGroupItem;
 
-export default ListGroup;
+export {ListGroup};

@@ -131,4 +131,4 @@ const TabContainer = (props) => {
 
 TabContainer.propTypes = propTypes;
 
-export default TabContainer;
+export {TabContainer};

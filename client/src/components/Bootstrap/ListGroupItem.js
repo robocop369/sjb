@@ -109,4 +109,4 @@ ListGroupItem.propTypes = propTypes;
 ListGroupItem.defaultProps = defaultProps;
 ListGroupItem.displayName = 'ListGroupItem';
 
-export default ListGroupItem;
+export {ListGroupItem};

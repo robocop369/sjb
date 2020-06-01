@@ -30,4 +30,4 @@ CloseButton.displayName = 'CloseButton';
 CloseButton.propTypes = propTypes;
 CloseButton.defaultProps = defaultProps;
 
-export default CloseButton;
+export {CloseButton};

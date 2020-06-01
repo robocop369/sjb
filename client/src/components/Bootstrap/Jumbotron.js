@@ -47,4 +47,4 @@ Jumbotron.propTypes = propTypes;
 Jumbotron.defaultProps = defaultProps;
 Jumbotron.displayName = 'Jumbotron';
 
-export default Jumbotron;
+export {Jumbotron};

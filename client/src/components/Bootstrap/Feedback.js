@@ -39,4 +39,4 @@ Feedback.displayName = 'Feedback';
 Feedback.propTypes = propTypes;
 Feedback.defaultProps = defaultProps;
 
-export default Feedback;
+export {Feedback};

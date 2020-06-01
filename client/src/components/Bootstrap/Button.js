@@ -1,9 +1,9 @@
-import classNames from 'classnames';
-import React from 'react';
-import PropTypes from 'prop-types';
+import {classNames} from 'classnames';
+import {React} from 'react';
+import {PropTypes} from 'prop-types';
 
 import { useBootstrapPrefix } from './ThemeProvider';
-import SafeAnchor from './SafeAnchor';
+import {SafeAnchor} from './SafeAnchor';
 
 const propTypes = {
   /**
@@ -107,4 +107,4 @@ Button.displayName = 'Button';
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
 
-export default Button;
+export {Button};

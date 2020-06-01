@@ -11,4 +11,4 @@ function Jumbotron({ children }) {
   );
 }
 
-export default Jumbotron;
+export {Jumbotron};

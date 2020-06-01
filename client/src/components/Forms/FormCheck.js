@@ -192,4 +192,4 @@ FormCheck.defaultProps = defaultProps;
 FormCheck.Input = FormCheckInput;
 FormCheck.Label = FormCheckLabel;
 
-export default FormCheck;
+export {FormCheck};

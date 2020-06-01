@@ -24,4 +24,4 @@ Tab.Container = TabContainer;
 Tab.Content = TabContent;
 Tab.Pane = TabPane;
 
-export default Tab;
+export {Tab};

@@ -116,4 +116,4 @@ DropdownItem.displayName = 'DropdownItem';
 DropdownItem.propTypes = propTypes;
 DropdownItem.defaultProps = defaultProps;
 
-export default DropdownItem;
+export {DropdownItem};

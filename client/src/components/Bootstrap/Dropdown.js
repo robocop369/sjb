@@ -162,4 +162,4 @@ Dropdown.Divider = createWithBsPrefix('dropdown-divider', {
   defaultProps: { role: 'separator' },
 });
 
-export default Dropdown;
+export {Dropdown};

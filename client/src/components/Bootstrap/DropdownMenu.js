@@ -140,4 +140,4 @@ DropdownMenu.displayName = 'DropdownMenu';
 DropdownMenu.propTypes = propTypes;
 DropdownMenu.defaultProps = defaultProps;
 
-export default DropdownMenu;
+export {DropdownMenu};

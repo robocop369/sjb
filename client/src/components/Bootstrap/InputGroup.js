@@ -85,4 +85,4 @@ InputGroup.Checkbox = InputGroupCheckbox;
 InputGroup.Append = InputGroupAppend;
 InputGroup.Prepend = InputGroupPrepend;
 
-export default InputGroup;
+export {InputGroup};

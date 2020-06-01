@@ -56,5 +56,5 @@ class ChicagoData extends React.Component {
           }
           }
 
-export default ChicagoData;
+export {ChicagoData};
 

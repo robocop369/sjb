@@ -62,4 +62,4 @@ const FormGroup = React.forwardRef(
 FormGroup.displayName = 'FormGroup';
 FormGroup.propTypes = propTypes;
 
-export default FormGroup;
+export {FormGroup};

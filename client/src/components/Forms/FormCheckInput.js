@@ -91,4 +91,4 @@ FormCheckInput.displayName = 'FormCheckInput';
 FormCheckInput.propTypes = propTypes;
 FormCheckInput.defaultProps = defaultProps;
 
-export default FormCheckInput;
+export {FormCheckInput};

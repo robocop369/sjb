@@ -208,4 +208,4 @@ Navbar.Text = createWithBsPrefix('navbar-text', {
   Component: 'span',
 });
 
-export default Navbar;
+export {Navbar};

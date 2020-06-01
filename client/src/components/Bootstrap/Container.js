@@ -58,4 +58,4 @@ Container.displayName = 'Container';
 Container.propTypes = propTypes;
 Container.defaultProps = defaultProps;
 
-export default Container;
+export {Container};

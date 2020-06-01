@@ -38,4 +38,4 @@ const NavbarBrand = React.forwardRef(
 NavbarBrand.displayName = 'NavbarBrand';
 NavbarBrand.propTypes = propTypes;
 
-export default NavbarBrand;
+export {NavbarBrand};

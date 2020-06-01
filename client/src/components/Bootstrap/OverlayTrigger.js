@@ -282,4 +282,4 @@ function OverlayTrigger({
 OverlayTrigger.propTypes = propTypes;
 OverlayTrigger.defaultProps = defaultProps;
 
-export default OverlayTrigger;
+export {OverlayTrigger};

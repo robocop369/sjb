@@ -1,12 +1,12 @@
-import classNames from 'classnames';
-import React from 'react';
-import PropTypes from 'prop-types';
+import {classNames} from 'classnames';
+import {React} from 'react';
+import {PropTypes} from 'prop-types';
 import { useUncontrolled } from 'uncontrollable';
 import { useBootstrapPrefix } from './ThemeProvider';
-import AccordionToggle from './AccordionToggle';
-import SelectableContext from './SelectableContext';
-import AccordionCollapse from './AccordionCollapse';
-import AccordionContext from './AccordionContext';
+import {AccordionToggle} from './AccordionToggle';
+import {SelectableContext} from './SelectableContext';
+import {AccordionCollapse} from './AccordionCollapse';
+import {AccordionContext} from './AccordionContext';
 
 const propTypes = {
   /** Set a custom element for this component */
@@ -58,4 +58,4 @@ Accordion.propTypes = propTypes;
 Accordion.Toggle = AccordionToggle;
 Accordion.Collapse = AccordionCollapse;
 
-export default Accordion;
+export {Accordion};

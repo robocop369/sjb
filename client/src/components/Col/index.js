@@ -1,4 +1,4 @@
-import React from "react";
+import {React} from "react";
 
 function Col(props) {
   const size = props.size
@@ -9,4 +9,4 @@ function Col(props) {
   return <div className={size} {...props} />;
 }
 
-export default Col;
+export {Col};

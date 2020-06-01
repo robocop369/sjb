@@ -4,4 +4,4 @@ const FigureCaption = createWithBsPrefix('figure-caption', {
   Component: 'figcaption',
 });
 
-export default FigureCaption;
+export {FigureCaption};

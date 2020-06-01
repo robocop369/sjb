@@ -30,4 +30,4 @@ const NavbarCollapse = React.forwardRef(
 NavbarCollapse.displayName = 'NavbarCollapse';
 NavbarCollapse.propTypes = propTypes;
 
-export default NavbarCollapse;
+export {NavbarCollapse};

@@ -87,4 +87,4 @@ NavDropdown.Item = Dropdown.Item;
 NavDropdown.Divider = Dropdown.Divider;
 NavDropdown.Header = Dropdown.Header;
 
-export default NavDropdown;
+export {NavDropdown};

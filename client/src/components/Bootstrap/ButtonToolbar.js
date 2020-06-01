@@ -35,4 +35,4 @@ const ButtonToolbar = React.forwardRef(
 ButtonToolbar.displayName = 'ButtonToolbar';
 ButtonToolbar.propTypes = propTypes;
 ButtonToolbar.defaultProps = defaultProps;
-export default ButtonToolbar;
+export {ButtonToolbar};

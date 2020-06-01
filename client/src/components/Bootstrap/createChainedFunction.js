@@ -26,4 +26,4 @@ function createChainedFunction(...funcs) {
     }, null);
 }
 
-export default createChainedFunction;
+export {createChainedFunction};

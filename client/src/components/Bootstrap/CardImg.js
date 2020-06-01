@@ -46,4 +46,4 @@ CardImg.displayName = 'CardImg';
 CardImg.propTypes = propTypes;
 CardImg.defaultProps = defaultProps;
 
-export default CardImg;
+export {CardImg};

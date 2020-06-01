@@ -122,4 +122,4 @@ SplitButton.propTypes = propTypes;
 SplitButton.defaultProps = defaultProps;
 SplitButton.displayName = 'SplitButton';
 
-export default SplitButton;
+export {SplitButton};

@@ -64,4 +64,4 @@ ToastHeader.displayName = 'ToastHeader';
 ToastHeader.propTypes = propTypes;
 ToastHeader.defaultProps = defaultProps;
 
-export default ToastHeader;
+export {ToastHeader};

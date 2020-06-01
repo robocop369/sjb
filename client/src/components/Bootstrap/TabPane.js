@@ -179,4 +179,4 @@ const TabPane = React.forwardRef((props, ref) => {
 TabPane.displayName = 'TabPane';
 TabPane.propTypes = propTypes;
 
-export default TabPane;
+export {TabPane};

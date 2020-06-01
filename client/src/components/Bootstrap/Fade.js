@@ -111,4 +111,4 @@ Fade.propTypes = propTypes;
 Fade.defaultProps = defaultProps;
 Fade.displayName = 'Fade';
 
-export default Fade;
+export {Fade};

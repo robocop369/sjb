@@ -98,4 +98,4 @@ const AbstractNavItem = React.forwardRef(
 AbstractNavItem.propTypes = propTypes;
 AbstractNavItem.defaultProps = defaultProps;
 
-export default AbstractNavItem;
+export {AbstractNavItem};

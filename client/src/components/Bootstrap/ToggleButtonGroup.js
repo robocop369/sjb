@@ -105,4 +105,4 @@ ToggleButtonGroup.defaultProps = defaultProps;
 
 ToggleButtonGroup.Button = ToggleButton;
 
-export default ToggleButtonGroup;
+export {ToggleButtonGroup};

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
-import Collapse from './Collapse';
-import AccordionContext from './AccordionContext';
+import {Collapse} from './Collapse';
+import {AccordionContext} from './AccordionContext';
 
 const propTypes = {
   /**
@@ -29,4 +29,4 @@ const AccordionCollapse = React.forwardRef(
 AccordionCollapse.propTypes = propTypes;
 AccordionCollapse.displayName = 'AccordionCollapse';
 
-export default AccordionCollapse;
+export {AccordionCollapse};

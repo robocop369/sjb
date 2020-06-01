@@ -98,4 +98,4 @@ FormLabel.displayName = 'FormLabel';
 FormLabel.propTypes = propTypes;
 FormLabel.defaultProps = defaultProps;
 
-export default FormLabel;
+export {FormLabel};

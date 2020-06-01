@@ -92,4 +92,4 @@ BreadcrumbItem.displayName = 'BreadcrumbItem';
 BreadcrumbItem.propTypes = propTypes;
 BreadcrumbItem.defaultProps = defaultProps;
 
-export default BreadcrumbItem;
+export {BreadcrumbItem};
