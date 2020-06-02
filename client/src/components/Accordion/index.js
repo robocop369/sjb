@@ -2,7 +2,6 @@ import React from "react";
 import Card from "../../components/Card";
 
 const panels = [
-    "Alerts",
     "Projects",
     "Organizations",
 ];
