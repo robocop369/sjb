@@ -1,13 +1,42 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Data Layer: Dynamic Styling</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/journal/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <link 
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+      crossorigin="anonymous"
+    >
+  <title>In The Loop</title>
+
+</head>
     <style>
+      .footer {
+  min-height: 100px;
+  background: #e5e5e5;
+  position: relative;
+}
+
+.footer span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3px;
+  background: #b8b8b8;
+}
       #map {
-        height: 95%;
+        height: 80%;
+        width: 50%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -17,9 +46,35 @@
       }
     </style>
   </head>
-  <body>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map"></div>
+<body>
+    <nav class="navbar-nav navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand"><span class="display-4" style="color: white;" aria-label="laptop" role="img">IN THE LOOP</span></a>
+</nav>
+
+
+<div class="col-md-auto">
+    <h2>Ward Housing Portal</h2>
+</div> 
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">    
+<div id="map"></div>
+</div>  
+
+
+<!-- <br> -->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+        <Button href="#contact" class="btn btn-secondary">Contact Us</Button>
+      </div>
+        <div class="col-md-auto">
+          <Button href="#faq" class="btn btn-info">FAQs</Button>
+        </div>
+        <div class="col-lg-2">
+          <Button href="#team" class="btn btn-primary">Learn About Us</Button>
+      </div>  
+      </div>
+  </div>
+
 
     <script>
        var map, cachedGeoJson, searchBox;
@@ -50,28 +105,20 @@
       });
 
       function initMap() {
-        var bounds = new google.maps.LatLngBounds();
+        // var input = document.getElementById('pac-input');
         // searchBox = new google.maps.places.SearchBox(input);
         map = new google.maps.Map(document.getElementById('map'), {
               //chicago coordinates hard
               center: {lat: 41.845, lng: -87.7},
-              zoom: 10.8
+              zoom: 10.5
             });
 
         console.log(cachedGeoJson);
         console.log(wrappedGeoJson);
             
-        // Jon [0,1,2,3,4].every(3,1) # [1,4]
         for(i=0;i<wrappedGeoJson.length; i++){
-          //j = ['purple','red','yellow','blue', 'beige']
-          //google.maps.Data.StyleOptions} */({
-        //     fillColor: color,
+
           map.data.addGeoJson(wrappedGeoJson[i]);
-//STEPHANIE - fix default color, fix 
-// Jon [0,1,2,3,4].every(3,1) # [1,4]    
-//fix url
-//add to correct component
-          // map.data.overrideStyle((wrappedGeoJson[i]).feature, {fillColor: 'green'})
         };
 
         // When the user hovers, tempt them to click by outlining the wards.
@@ -98,16 +145,14 @@
         wardLabel.textContent = `ward ${event.feature.j.ward}`;
         map.controls[google.maps.ControlPosition.TOP_RIGHT].push(wardLabel);
         });
+
+
           // Bold on Click
           map.data.addListener('click', function(event) {
               map.data.overrideStyle(event.feature, {strokeWeight: 5});
               wardid = event.feature.j.ward
-              //URL
-              // app.get(/:wardid/signin, function (req, res) {
-              // res.send('/a/')
-              // })
-              //root+wardsignin? 
-              
+              url = "https://my-ward-housing-portal.herokuapp.com/dashboard"
+              window.open(url)   
         });
 
         // Off hover, revert to gray and unbold
@@ -152,9 +197,8 @@
               size: new google.maps.Size(71, 71),
               origin: new google.maps.Point(0, 0),
               anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25),
-              zoom: new google.maps.zoom(6)
-            };
+              scaledSize: new google.maps.Size(25, 25)
+                        };
 
             // Create a marker for each place.
             markers.push(new google.maps.Marker({
