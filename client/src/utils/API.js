@@ -1,8 +1,24 @@
 import axios from "axios";
 
 export default {
+
+  //Authentication 
+  login: function (userData) {
+    return axios.post("api/users/login", userData);
+  },
+  signup: function (userData) {
+    return axios.post("api/users/signup", userData);
+  },
+  isAuth: function (_id) {
+    return axios.get("api/users/" + _id);
+  },
+  logout: function () {
+    return axios.get("api/users/logout");
+
+  },
+
   // Gets all landlord
-  getLandlords: function() {
+  getLandlords: function () {
     return axios.get("/api/landlords");
   },
   // Gets the landlord with the given id

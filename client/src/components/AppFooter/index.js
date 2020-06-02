@@ -1,11 +1,13 @@
 import React from "react";
 import "./style.css";
-import { Footer, Container, Row, Col, Button } from "../Bootstrap";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 
 function AppFooter() {
   return (
-    <Footer>
-      <Container>
+       <Container>
         <Row>
           <Col><Button href="#contact" variant="secondary">Contact Us</Button></Col>
           <Col md="auto"><Button href="#faq" variant="info">FAQs</Button></Col>
@@ -13,7 +15,6 @@ function AppFooter() {
           </Col>
         </Row>
       </Container>
-    </Footer>
-  )
+   )
 };
 export default AppFooter;

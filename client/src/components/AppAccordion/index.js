@@ -1,7 +1,7 @@
 import React from "react";
-import Accordion from "../Bootstrap/Accordion";
-import Card from "../Bootstrap/Card";
-import CustomToggle from "../Bootstrap/AccordionToggle";
+import Accordion from 'react-bootstrap/Accordion';
+import Card from "react-bootstrap/Card";
+import CustomToggle from "react-bootstrap/AccordionToggle";
 import "./style.css";
 
 function AppAccordion() {

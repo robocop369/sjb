@@ -4,16 +4,23 @@ import Landlord from "./pages/Landlord";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-// import Portal from "./pages/Portal";
-import Nav from "./components/Nav";
+import Login from "./pages/Login"
+import Signup from "./pages/Signup"
+import AppNavbar from "./components/Navbar";
+import AppFooter from "./components/AppFooter";
+import Portal from "./pages/Portal";
+
 
 function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <AppNavbar />
         <Switch>
-          <Route exact path="/" component={Dashboard} />
+          <Route exact path="/" component={Portal} />
+          <Route exact path="/Login" component={Login} />
+          <Route exact path="/Signup" component={Signup} />
+          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/landlord" component={Landlord} />
           <Route exact path="/landlord/:id" component={Detail} />
           {/* <Route exact path="/portal/" component={Portal} /> */}
@@ -24,6 +31,7 @@ function App() {
           {/* <Route exact path="/testdata" component={TEST} /> */}
           {/* <Route exact path="/chimap" component={ChicagoMap} /> */}
           <Route component={NoMatch} />
+          <AppFooter />
         </Switch>
       </div>
     </Router>
