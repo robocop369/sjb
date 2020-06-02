@@ -53,7 +53,7 @@ function Signup() {
                                 </button>
                             </div>
                             <div className="modal-body">
-                                Go back home and start shopping
+                                Go back home and search a ward
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-dark" data-dismiss="modal" onClick={handleClick}>Close</button>

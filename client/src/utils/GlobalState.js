@@ -9,20 +9,35 @@ const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
     switch (action.type) {
+
+        // case ADD_CART_ITEM:
+        //     var count = state.cartCount;
+        //     if (count[action.item.name]) {
+        //         count[action.item.name]++;
+        //         return {
+        //             ...state,
+        //             cartCount: count
+        //         };
+        //     } else {
+        //         count[action.item.name] = 1;
+        //         return {
+        //             ...state,
+        //             cart: [action.item, ...state.cart],
+        //             cartCount: count
+        //         };
+        //     }
+
         case LOGIN:
-            const user = {
+            return {
                 ...state,
                 loggedin: true,
-                user: action.user
-            }
-            localStorage.setItem("user", JSON.stringify(user))
-            return user
+                user: action._id
+            };
         case LOGOUT:
-            localStorage.clear();
             return {
                 ...state,
                 loggedin: false,
-                user: {}
+                user: ""
             };
         default:
             return state;
@@ -31,11 +46,20 @@ const reducer = (state, action) => {
 
 
 const StoreProvider = ({ value = [], ...props }) => {
-    const lastUser = localStorage.getItem("user");
-    const user = (!lastUser) ? 
-        { loggedin:false, user:{} } : JSON.parse(lastUser);
-   
-    const [state, dispatch] = useReducer(reducer, user);
+    const [state, dispatch] = useReducer(reducer, {
+        searchItems: [],
+        currentItem: {
+            // _id: 0,
+            // title: "",
+            // price: "",
+            // description: ""
+        },
+        categories: [],
+        cart: [],
+        cartCount: {},
+        loggedin: false,
+        userId: ""
+    });
     return <Provider value={[state, dispatch]} {...props} />;
 };
 
@@ -43,5 +67,4 @@ const useStoreContext = () => {
     return useContext(StoreContext);
 };
 
-const StoreConsumer = StoreContext.Consumer
-export { StoreProvider, StoreConsumer, useStoreContext };
+export { StoreProvider, useStoreContext };

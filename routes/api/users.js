@@ -11,7 +11,6 @@ router.route("/login").post((req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
-
 // SIGNUP ROUTE
 router.route("/signup").post((req, res) => {
   usersController.signUp(req, res);
@@ -19,7 +18,7 @@ router.route("/signup").post((req, res) => {
 
 // Any route with isAuthenticated is protected and you need a valid token
 // to access
-router.route("/:id").get((req, res) => {
+router.route("/:id").get(isAuthenticated, (req, res) => {
   db.User.findById(req.params.id)
     .then(data => {
       if (data) {
@@ -30,16 +29,5 @@ router.route("/:id").get((req, res) => {
     })
     .catch(err => res.status(400).send(err));
 });
-
-// // Matches with "/api/users"
-// router.route("/")
-//   .get(usersController.findAll)
-
-// Matches with "/api/books/:id"
-// router
-//   .route("/:id")
-//   .get(usersController.findById)
-//   .put(usersController.update)
-//   .delete(usersController.remove);
 
 module.exports = router;
