@@ -7,7 +7,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
       #map {
-        height: 95%;
+        height: 75%;
+        width: 75%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -52,8 +53,7 @@
         var bounds = new google.maps.LatLngBounds();
         // searchBox = new google.maps.places.SearchBox(input);
         map = new google.maps.Map(document.getElementById('map'), {
-              //chicago coordinates hard
-              // center: {lat: 41.845, lng: -87.7},
+              //ward one coordinates hard 
               center: {lat: 41.9169, lng: -87.6879},
               zoom: 13
             });
