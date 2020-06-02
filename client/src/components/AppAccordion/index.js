@@ -1,13 +1,19 @@
 import React from "react";
 import Accordion from "../Bootstrap/Accordion";
-import Card from "../Bootstrap/Card";
+import Card from "react-bootstrap/Card";
 import CustomToggle from "../Bootstrap/AccordionToggle";
+// import styled from "styled-components";
 import "./style.css";
 
+// const Accordion = styled.section`
+//   padding: 4em;
+//   background: papayawhip;
+// `;
 function AppAccordion() {
     return (
+        
         <Accordion defaultActiveKey="0">
-            <Card>
+            <Card className="object">
                 <Card.Header>
                     <CustomToggle eventKey="0">Click me!</CustomToggle>
                 </Card.Header>
