@@ -4,8 +4,8 @@ import AbanBuildingsTypeBarChart from "./NEWCHICAGOCARD/AbanBuildingsTypeBarChar
 import OrdViolationsTypeBarChart from "./NEWCHICAGOCARD/OrdViolationsTypeBarChart";
 import Row from "../../Row";
 // import API from "../../utils/API";
-import ToggleButtonGroup from "../../Bootstrap/ToggleButtonGroup";
-import ToggleButton from "../../Bootstrap/ToggleButton";
+import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
+import ToggleButton from "react-bootstrap/ToggleButton";
 
 
 

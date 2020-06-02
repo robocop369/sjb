@@ -1,8 +1,10 @@
 import React from "react";
-import Accordion from "../Bootstrap/Accordion";
+
+import Accordion from 'react-bootstrap/Accordion';
 import Card from "react-bootstrap/Card";
-import CustomToggle from "../Bootstrap/AccordionToggle";
-// import styled from "styled-components";
+import CustomToggle from "react-bootstrap/AccordionToggle";
+
+
 import "./style.css";
 
 // const Accordion = styled.section`

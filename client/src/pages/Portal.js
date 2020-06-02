@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "../components/Bootstrap/Container";
+import Container from "react-bootstrap/Container";
 import Jumbotron from "../components/Jumbotron";
 import AppFooter from "../components/AppFooter";
 import AppNavbar from "../components/Navbar";
@@ -7,11 +7,6 @@ function Portal() {
 
     return (
         <div>
-            <nav>
-                <AppNavbar>
-                </AppNavbar>
-            </nav>
-            <br></br>
             <Container fluid>
                 <Jumbotron fluid>
                     <h1>City Map Of Chicago</h1>
