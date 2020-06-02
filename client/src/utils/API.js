@@ -17,6 +17,18 @@ export default {
 
   },
 
+ // Gets all cards
+getPosts: function() {
+  return axios.get("/api/homepages");
+},
+
+// Gets all wards
+// getAllWards: function() {
+//   return axios.get("/api/landlords/");
+// },
+
+
+
   // Gets all landlord
   getLandlords: function () {
     return axios.get("/api/landlords");

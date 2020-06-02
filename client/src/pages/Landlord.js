@@ -9,63 +9,58 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 
 function Landlords() {
   // Setting our component's initial state
-  const [landlords, setLandlords] = useState([])
-  const [formObject, setFormObject] = useState({})
-
-  // Load all landlord and store them with setLandlord
-  useEffect(() => {
-    loadLandlords()
-  }, [])
 
   // Loads all landlord and sets them to landlord
-  function loadLandlords() {
-    API.getLandlords()
+  function loadPosts() {
+    API.getPosts()
       .then(res => 
-        setLandlords(res.data)
+        // setPosts(res.data),
+        console.log(res)
       )
       .catch(err => console.log(err));
   };
 
-  // Deletes a landlord from the database with a given id, then reloads landlord from the db
-  function deleteLandlord(id) {
-    API.deleteLandlord(id)
-      .then(res => loadLandlords())
-      .catch(err => console.log(err));
-  }
+  loadPosts()
 
-  // Handles updating component state when the user types into the input field
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
-  };
+  // // Deletes a landlord from the database with a given id, then reloads landlord from the db
+  // function deleteLandlord(id) {
+  //   API.deleteLandlord(id)
+  //     .then(res => loadLandlords())
+  //     .catch(err => console.log(err));
+  // }
 
-  // When the form is submitted, use the API.saveLandlord method to save the Landlord data
-  // Then reload Landlord from the database
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    // only runs if Address and ShortDesc are there
-    if (formObject.Address && formObject.ShortDesc) {
-      API.saveLandlord({
-        Address: formObject.Address,
-        ShortDesc: formObject.ShortDesc,
-        LongDesc: formObject.LongDesc
-      })
-        .then(res => loadLandlords())
-        .catch(err => console.log(err));
-    }
-  };
+  // // Handles updating component state when the user types into the input field
+  // function handleInputChange(event) {
+  //   const { name, value } = event.target;
+  //   setFormObject({...formObject, [name]: value})
+  // };
 
+  // // When the form is submitted, use the API.saveLandlord method to save the Landlord data
+  // // Then reload Landlord from the database
+  // function handleFormSubmit(event) {
+  //   event.preventDefault();
+  //   // only runs if Address and ShortDesc are there
+  //   if (formObject.Address && formObject.ShortDesc) {
+  //     API.saveLandlord({
+  //       Address: formObject.Address,
+  //       ShortDesc: formObject.ShortDesc,
+  //       LongDesc: formObject.LongDesc
+  //     })
+  //       .then(res => loadLandlords())
+  //       .catch(err => console.log(err));
+  //   }
   
 
     return (
            
       <Container fluid>
-        <Row>
+
+        {/* <Row>
           <Col size="md-6" >
             <Jumbotron>
               <h1>Do you have a complaint about a landlord?</h1>
-            </Jumbotron>
-            <form>
+            </Jumbotron> */}
+            {/* <form>
               <Input
                 onChange={handleInputChange}
                 name="Address"
@@ -95,7 +90,7 @@ function Landlords() {
               <h1>Landlord Complaint List</h1>
             </Jumbotron>
             {/* truthly ,,, it is not empty*/}
-            {landlords.length ? (
+            {/* {landlords.length ? (
               <List>
                 {landlords.map(landlord => (
                   <ListItem key={landlord._id}>
@@ -105,7 +100,7 @@ function Landlords() {
                       </strong>
                     </Link>
                     {/* we are passing the funcion in the empty () */}
-                    <DeleteBtn onClick={() => deleteLandlord(landlord._id)} />
+                    {/* <DeleteBtn onClick={() => deleteLandlord(landlord._id)} />
                   </ListItem>
                 ))}
               </List>
@@ -113,7 +108,7 @@ function Landlords() {
               <h3>No Results to Display</h3>
             )}
           </Col>
-        </Row>
+        </Row> */} */} */}
       </Container>
     );
   }

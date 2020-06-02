@@ -14,6 +14,6 @@ const learnaboutusSchema = new Schema({
 });
 
 //name in quotes is the model that shows up in mlab
-const LearnAboutUs = mongoose.model("learnaboutus", learnaboutusSchema);
+const LearnAboutUs = mongoose.model("Learnaboutus", learnaboutusSchema);
 
 module.exports = LearnAboutUs;
