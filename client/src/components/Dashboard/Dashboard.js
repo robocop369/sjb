@@ -3,6 +3,7 @@ import Col from "react-bootstrap/Col";
 import ChicagoData from "./ChicagoData/ChicagoData";
 import {Row, Container } from "../Grid";
 import Accordion from "../Accordion";
+import AppFooter from "../AppFooter";
 import "../../../src/styles.css";
 
 
@@ -21,15 +22,12 @@ function Dashboard() {
           </br>
         </Row>
         <Row>
-          <Col md={{ span: 3, offset: 3 }}>{<ChicagoData />}</Col>
-        </Row>
-        <Row>
-          <Col md={{ span: 6, offset: 3 }}>DATASHEET</Col>
+          <Col md={{ span: 5, offset: 4 }}>{<ChicagoData/>}</Col>
         </Row>
         <Accordion/>
-        {/* <Row>
-        <Footer/>
-        </Row> */}
+        <Row>
+        {/* <AppFooter/> */}
+        </Row>
       </Container>
     </div>
   );
