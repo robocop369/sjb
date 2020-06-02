@@ -3,6 +3,7 @@ import Col from "react-bootstrap/Col";
 import ChicagoData from "./ChicagoData/ChicagoData";
 import {Row, Container } from "../Grid";
 import Accordion from "../Accordion";
+import "../../../src/styles.css";
 function Dashboard() {
 
   return (
