@@ -8,12 +8,12 @@ const abanBuildingsRoutes = require("./abanBuildings");
 const ordViolationsRoutes = require("./ordViolations");
 
 const userRoutes = require("./users");
-const homepageRoutes = require("./homepage");
+const homepageRoutes = require("./homepages");
 const learnaboutusRoutes = require("./learnaboutus");
 
 // Landlord routes
 router.use("/landlords", landlordRoutes);
-router.use("/homepage", homepageRoutes);
+router.use("/homepages", homepageRoutes);
 router.use("/learnaboutus", learnaboutusRoutes);
 router.use("/products", productRoutes);
 router.use("/chicagodata", chicagoDataRoutes);
