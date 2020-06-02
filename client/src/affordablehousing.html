@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Layer: Dynamic Styling</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      #map {
+        height: 95%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script>
+       var map, cachedGeoJson, searchBox;
+       var wrappedGeoJson = [];
+
+       $.ajax({
+        url: "https://data.cityofchicago.org/resource/k9yb-bpqx.json",
+        type: "GET",
+        data: {
+          "$limit" : 5000,
+          "$$app_token" : "8MsoFyxjS53a2z1L0Hjt3XtRz"
+          //update to:
+          //process.env.CHICAGO_WARD_TOKEN
+        }
+       }).done(function(data) {              
+        cachedGeoJson = data;
+        for(i=0;i<cachedGeoJson.length; i++){
+            wrappedGeoJson.push(    
+                { type: "Feature", 
+                  properties: {
+                  ward: cachedGeoJson[i].ward,
+                  },
+                  geometry: cachedGeoJson[i].the_geom
+                  }
+            )
+           };
+        initMap();
+      });
+
+      function initMap() {
+        var bounds = new google.maps.LatLngBounds();
+        // searchBox = new google.maps.places.SearchBox(input);
+        map = new google.maps.Map(document.getElementById('map'), {
+              //chicago coordinates hard
+              // center: {lat: 41.845, lng: -87.7},
+              center: {lat: 41.9169, lng: -87.6879},
+              zoom: 13
+            });
+
+        console.log(cachedGeoJson);
+        console.log(wrappedGeoJson);
+            
+          map.data.addGeoJson(wrappedGeoJson[40]);
+        }
+        
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMZFIRsA7_WHXMc83EcgwaANy8xWzqnco&libraries=places">
+    //src="https://maps.googleapis.com/maps/api/js?key=process.env.GOOGLE_MAPS_API_KEY">
+    //fix api key
+    </script>
+  </body>
+</html>

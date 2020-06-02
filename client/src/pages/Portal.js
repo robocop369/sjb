@@ -18,16 +18,17 @@ function Portal() {
                         className="d-inline-block align-top"
                         alt="Ward Housing Portal"
                     />
+            </Navbar.Brand>
+            </Navbar>
                     <h2>Ward Housing Portal</h2>
                     <Form inline>
-                        <Form.Control type="text" placeholder="Type in your address to find your ward" className="mr-sm-2" />
+                        <Form.Control id="pac-input" type="text" placeholder="Type in your address to find your ward" className="mr-sm-2" />
                         <Button variant="outline-success">Search</Button>
                     </Form>
-                </Navbar.Brand>
-            </Navbar>
         <Container fluid>
             <Jumbotron fluid>
                 <h1>City Map Of Chicago</h1>
+                <div id="map"></div>
             </Jumbotron>
         </Container>
         </div >
