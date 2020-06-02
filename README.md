@@ -1,18 +1,8 @@
-# sjb
-https://courses.cs.washington.edu/courses/cse326/02wi/homework/hw5/good-readmes.html
-​
-https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
-​
-https://medium.com/@meakaakka/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3
-​
-https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project
-​
-​
-​
-* Choose a self-explaining name for your project.
+# My Housing Portal
+
 ## Description
 * 
-​
+​test
 # Badges
 On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
 
