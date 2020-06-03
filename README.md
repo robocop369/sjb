@@ -46,14 +46,10 @@ dependencies
 - "styled-components": "^5.1.1"
 
 
-## header H2
-### header H3
-#### header H4
-##### header H5
-###### header H6
 
 ## Description
-* 
+Our application will allow Chicago residents to access their own individual wards to create, respond to and obtain community response to particular events affecting their community. To allow Chicago residents to anonymously provide grievances for particular housing situations, albeit non-public housing. 
+
 #### User Story:
 GIVEN: I am a Chicago resident,
 
